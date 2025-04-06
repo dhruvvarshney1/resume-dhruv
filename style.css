@@ -1,0 +1,316 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafc;
+    color: #343a40;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Resume Container */
+.resume {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #e0e7ef;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Profile Image (if uncommented in HTML) */
+.profile-image {
+    width: 120px;
+    height: 160px;
+    overflow: hidden;
+    border: 2px solid #333;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Header Info Styles */
+.info h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.degree-info {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #4b5563;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* Logo Style */
+.logo img {
+    width: 90px;
+    height: auto;
+}
+
+/* Section Styles */
+.section {
+    margin-top: 25px;
+}
+
+.section h2 {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border-left: 4px solid #3b82f6;
+}
+
+/* General Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+table th,
+table td {
+    border: 1px solid #e0e7ef;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #f3f4f6;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Project Styles */
+.project-item-1,
+.project-item-2 {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 3px solid #d1d5db;
+}
+
+.project-item-1 h3,
+.project-item-2 h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #111827;
+}
+
+.duration {
+    float: right;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #6b7280;
+}
+
+.supervisor {
+    font-size: 0.95em;
+    color: #4b5563;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+/* List Styles */
+.project-details,
+.skills-list,
+.overview-list,
+.extracurricular-list,
+.achievement-list {
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+.project-details li,
+.skills-list li,
+.overview-list li,
+.extracurricular-list li,
+.achievement-list li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.skills-list li strong {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #6b7280;
+    font-size: 0.9em;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .resume { padding: 20px; margin: 20px; }
+    header { flex-direction: column; align-items: center; text-align: center; }
+    .profile-container { flex-direction: column; align-items: center; gap: 15px; }
+    .info h1 { font-size: 22px; }
+    .logo { margin-top: 15px; }
+    .duration { float: none; display: block; margin-top: 3px; text-align: left; }
+    table th, table td { padding: 6px 8px; font-size: 13px; }
+}
+ @media (max-width: 480px) {
+     .resume { margin: 10px; padding: 15px; border-radius: 8px; }
+      body { font-size: 14px; }
+     .info h1 { font-size: 20px; }
+      .section h2 { font-size: 16px; }
+      table th, table td { font-size: 12px; }
+ }
+
+/* --- Print-Specific Styles --- */
+@media print {
+    /* Remove background/shadows for printing */
+    body {
+        background-color: #fff;
+        font-size: 10pt; /* Slightly smaller base font for print */
+        line-height: 1.3; /* Tighter line spacing */
+        color: #000; /* Ensure black text */
+    }
+    .resume {
+        max-width: 100%;
+        margin: 0;
+        padding: 1cm; /* Use print margins */
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+    }
+    header {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc; /* Lighter border for print */
+    }
+    .info h1 {
+        font-size: 16pt; /* Smaller name for print */
+        margin-bottom: 4px;
+    }
+    .degree-info {
+        font-size: 10pt;
+        margin-bottom: 3px;
+    }
+    .contact-info {
+        font-size: 9pt;
+    }
+    .logo img {
+        width: 60px; /* Smaller logo */
+    }
+    .section {
+        margin-top: 10px; /* Reduced space between sections */
+    }
+    .section h2 {
+        font-size: 12pt; /* Smaller section headings */
+        padding: 2px 5px;
+        margin-bottom: 8px;
+        background-color: #eee; /* Lighter background */
+        border-left-width: 3px;
+    }
+    table {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    table th, table td {
+        padding: 4px 6px; /* Reduced cell padding */
+        font-size: 9pt; /* Smaller table text */
+        border: 1px solid #ddd;
+    }
+    table th {
+         background-color: #f5f5f5;
+    }
+    .project-item-1, .project-item-2 {
+        margin-bottom: 10px; /* Reduced space between projects */
+        padding-left: 5px;
+        border-left-width: 2px;
+    }
+    .project-item-1 h3, .project-item-2 h3 {
+        font-size: 11pt; /* Smaller project titles */
+        margin-bottom: 3px;
+    }
+    .supervisor {
+        font-size: 9pt;
+        margin-bottom: 4px;
+    }
+    .duration {
+         font-size: 8pt; /* Smaller duration text */
+    }
+    /* Reduce list spacing */
+    .project-details,
+    .skills-list,
+    .overview-list,
+    .extracurricular-list,
+    .achievement-list {
+        padding-left: 15px;
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    .project-details li,
+    .skills-list li,
+    .overview-list li,
+    .extracurricular-list li,
+    .achievement-list li {
+        margin-bottom: 3px; /* Tighter list items */
+        font-size: 9pt; /* Smaller list text */
+    }
+    /* Hide unnecessary elements for print */
+     footer {
+         margin-top: 15px;
+         padding-top: 8px;
+         font-size: 8pt;
+         border-top: 1px solid #ccc;
+    }
+    /* Prevent page breaks inside elements where possible */
+    .section, .project-item-1, .project-item-2, table, ul, li {
+        page-break-inside: avoid;
+    }
+    /* Remove links for print or style them differently */
+    a {
+        color: #000; /* Make links black */
+        text-decoration: none; /* Remove underline */
+    }
+    /* Optionally show URLs next to links */
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        color: #555;
+    }
+}
