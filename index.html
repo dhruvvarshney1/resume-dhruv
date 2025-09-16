@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Dhruv Varshney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="resume">
+        <header>
+    <div class="header-info">
+        <h1>Dhruv Varshney | 23EX10013</h1>
+        <p class="degree-info">
+            Bachelor of Science in Exploration Geophysics (4-Year), Dept. of Geology and Geophysics<br>
+            Indian Institute of Technology, Kharagpur
+        </p>
+        <div class="contact-details">
+            <p>📧 dhruvvarshney2906@gmail.com | dhruvvarshney@kgpian.iitkgp.ac.in</p>
+            <p>📞 +91 8597986847</p>
+        </div>
+    </div>
+    <div class="header-logo">
+        <img src="iitkgp_logo.jpg" alt="IIT Kharagpur Logo" onerror="this.onerror=null; this.src='https://placehold.co/80x80/eee/ccc?text=Logo';">
+    </div>
+</header>
+
+        <section class="section education">
+            <h2>Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Degree/Exam</th>
+                        <th>Institution</th>
+                        <th>CGPA/Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2027</td>
+                        <td><strong>4YRS B.S</strong></td>
+                        <td><strong>IIT Kharagpur</strong></td>
+                        <td><strong>8.34/10</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>Central Board of Secondary Education (CBSE)</td>
+                        <td>Kendriya Vidyalaya IIT Kharagpur</td>
+                        <td><strong>91.2%</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>Central Board of Secondary Education (CBSE)</td>
+                        <td>Kendriya Vidyalaya IIT Kharagpur</td>
+                        <td><strong>97.6%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section internships">
+            <h2>Internships</h2>
+            <div class="item-container">
+                <h3><strong>Analyst Programmer</strong> - Xceedance Consulting Private Limited<span class="duration">May '25 - Present</span></h3>
+                 <p class="role-description">Extraction of Information from Insurance data using <strong>LLM</strong> and <strong>Normalization</strong> of insurance specific data.</p>
+                <ul class="details-list">
+                    <li>Generated Data using <strong>genAI</strong> and covering various types of data classes that can occur in insurance.</li>
+                    <li>Applied <strong>Exploratory data analysis</strong> on the insurance data and cleaned the data, enhancing data quality for downstream tasks.</li>
+                    <li><strong>Normalized data</strong> by standardizing and parsing names to ensure consistency in data format throughout the dataset.</li>
+                    <li>Built and deployed a <strong>Few-Shot learning model</strong> with the <strong>Azure AI API</strong> to accurately classify key entities in the data.</li>
+                </ul>
+            </div>
+            <div class="item-container">
+                <h3><strong>Vedvani:</strong> Transcribing Spoken Sanskrit Shlokas<span class="duration">May '24 - Nov '24</span></h3>
+                <p class="supervisor">Under Prof. Pawan Goyal, IIT Kharagpur</p>
+                <p class="role-description">Engineered a <strong>speech-to-text pipeline</strong> by scraping Sanskrit web text with svaras and training a custom <strong>Transformer model</strong> on the resulting audio-text dataset.</p>
+                <ul class="details-list">
+                    <li>Scraped a website using <strong>BeautifulSoup</strong> to gather a dataset of transcripts and corresponding audio files.</li>
+                    <li>Cleaned and preprocessed the dataset to ensure consistency and accurate alignment between audio and text.</li>
+                    <li>Trained a <strong>Wav2Vec2 model</strong> on the prepared dataset to perform speech-to-text transcription for Sanskrit.</li>
+                    <li>Evaluated model performance using <strong>Word Error Rate (WER)</strong> and <strong>Character Error Rate (CER)</strong> metrics, achieving improvements.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section projects">
+            <h2>Projects</h2>
+            <div class="item-container">
+                <h3>Home-coming Cloud Kitchen<span class="duration">May '25 - Present</span></h3>
+                <ul class="details-list">
+                    <li>Built a fully functional and responsive static website for a local cloud kitchen using <strong>HTML, CSS,</strong> and <strong>vanilla JavaScript</strong>.</li>
+                    <li>Implemented a <strong>dynamic menu system</strong> that renders meal options in real-time based on user-selected dates and time slots.</li>
+                    <li>Designed an interactive order summary that recalculates subtotals, delivery fees, and totals as users add or adjust items.</li>
+                    <li>Integrated client-side form validation for accurate input and structured order details into a <strong>JSON payload</strong> for API simulation.</li>
+                    <li>Managed the project with <strong>Git</strong> and deployed the live site to <strong>GitHub Pages</strong>, showing end-to-end development proficiency.</li>
+                </ul>
+            </div>
+             <div class="item-container">
+                <h3>Image-Filtering Web App<span class="duration">May '25 - Present</span></h3>
+                <ul class="details-list">
+                    <li>Developed a fully responsive web app to apply various real-time image filters using <strong>OpenCV</strong> and <strong>Flask</strong>.</li>
+                    <li>Built interactive UI with <strong>HTML, CSS, JS,</strong> and <strong>Fetch API</strong> for dynamic previews and uploads, ensuring smooth interaction.</li>
+                    <li>Designed <strong>RESTful Flask routes</strong> for upload and processing; returned images via send_file() or base64.</li>
+                    <li>Utilized <strong>OpenCV</strong> for fast image transformations and optimized static delivery for repeated access, improving performance.</li>
+                </ul>
+            </div>
+            <div class="item-container">
+                <h3>Sudoku Solver<span class="duration">Sept '24 - Nov '24</span></h3>
+                <ul class="details-list">
+                    <li>Implemented a Sudoku puzzle solver using a <strong>recursive backtracking algorithm</strong> in <strong>C++</strong>.</li>
+                    <li>Integrated a <strong>graphical user interface</strong> using <strong>SFML</strong> to visualize the step-by-step solving process in real time.</li>
+                    <li>Enabled user input for custom puzzles and displayed solution path dynamically, demonstrating grasp of recursion and UI logic.</li>
+                    <li>Added functionality for highlighting conflicts and providing hints, further improving user experience and interactivity.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section achievements">
+            <h2>Awards and Achievements</h2>
+            <ul class="achievement-list">
+                <li>Ranked among the <strong>top 6.4% in JEE Advanced 2023</strong> and <strong>top 1.9% in JEE Mains 2023</strong>.</li>
+                <li>Ranked among the <strong>top 1% in WBJEE</strong> (West Bengal Joint Entrance Exam) among more than 1 Lakh students.</li>
+                <li>Achieved a <strong>peak rating of 1200+ on Codeforces</strong> demonstrating my Competitive programming skills.</li>
+                <li><strong>Solved 150+ Leetcode Problems</strong> consistently improving my coding abilities and logical reasoning.</li>
+                <li>Secured <strong>4th place overall</strong> in the <strong>Open IIT Data Analytics Competition 2024</strong>.</li>
+            </ul>
+        </section>
+
+        <section class="section skills">
+            <h2>Skills and Expertise</h2>
+            <ul class="skills-list">
+                <li><strong>Languages:</strong> C, C++, Python, HTML, CSS, Javascript, Bash, MySQL</li>
+                <li><strong>Libraries & Frameworks:</strong> Pandas, NumPy, Matplotlib, scikit-learn, TensorFlow, BeautifulSoup4, spacy</li>
+                <li><strong>Tools & Platforms:</strong> VS Code, Sublime Text, Git, Github, Jupyter Notebook, MS Office, Canva</li>
+                <li><strong>Concepts:</strong> Large Language Models</li>
+            </ul>
+        </section>
+
+        <section class="section coursework">
+            <h2>Coursework Information</h2>
+            <ul class="skills-list">
+                <li><strong>Computer Science and Mathematics:</strong> Programming and Data Structures (Lab and Theory), Linear Algebra, Advanced Calculus, Partial Differential Equation, Probability and Statistics, Transform Calculus</li>
+                <li><strong>Core and Electives:</strong> Economics, Geophysical Signal Processing, Geophysical Field Theory, Introduction to Innovation and Enterpreneurship, Structural Geology, Petrology, Paleontology and Stratigraphy</li>
+                <li><strong>MOOCS:</strong> <strong>Machine Learning Specialization</strong> by Andrew Ng (Coursera), Audio Course by Hugging Face, Matlab Onramp by Mathworks, Strivers A2Z Course</li>
+            </ul>
+        </section>
+        
+        <section class="section positions">
+            <h2>Positions of Responsibility</h2>
+            <ul class="achievement-list">
+                <li><strong>Head of Design and Content Writing | Click Kgp:</strong> Proficient in multiple photography styles including event, lifestyle, and wildlife, with advanced post-production skills.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>&copy; Dhruv Varshney | IIT Kharagpur | 2027</footer>
+
+</body>
+
+</html>

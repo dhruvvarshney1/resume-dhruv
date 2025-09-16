@@ -1,0 +1,74 @@
+DHROOV VARSHNEY | 23EX10013
+BS (Exploration Geophysics), Indian Institute of Technology Kharagpur (2023–2027)
+Email: dhruvvarshney2906@gmail.com | Phone: +91 85979 86847 | LinkedIn: <add> | GitHub: <add>
+Location: Kharagpur, India
+
+-------------------------------------------------------------------------------
+EDUCATION
+IIT Kharagpur (Bachelor of Science, Exploration Geophysics)                2027
+  CGPA: 8.34 / 10 (Current)
+Kendriya Vidyalaya IIT Kharagpur (CBSE Class XII)                          2023
+  Percentage: 91.2%
+Kendriya Vidyalaya IIT Kharagpur (CBSE Class X)                            2021
+  Percentage: 97.6%
+
+-------------------------------------------------------------------------------
+EXPERIENCE & RESEARCH INTERNSHIPS
+Analyst Programmer Intern, Xceedance Consulting Pvt Ltd          May 2025 – Present
+  • Extracting structured information from insurance documents using LLM-driven parsing.
+  • Generated synthetic domain data with GenAI to extend coverage of rare policy classes.
+  • Standardized/normalized entity fields (names, classes) reducing downstream parse errors ~15%.
+  • Designed few-shot classification prompts on Azure OpenAI for key entity tagging.
+
+Undergraduate Research Intern, Vedvani (Prof. Pawan Goyal)       May 2024 – Nov 2024
+  • Built Sanskrit speech-to-text pipeline: scraped aligned audio/text (BeautifulSoup) incl. svaras.
+  • Cleaned & aligned dataset; engineered text normalization preserving tonal markers.
+  • Trained Wav2Vec2 / transformer acoustic model; tuned decoding for low-resource phonetics.
+  • Achieved 12% relative WER reduction vs baseline; tracked WER & CER for iterative improvement.
+
+-------------------------------------------------------------------------------
+PROJECTS
+Home-coming Cloud Kitchen Website                                   May 2025 – Present
+  • Responsive static site (HTML, CSS, JS) for local kitchen; modular components and menu system.
+  • Dynamic availability & pricing recalculation (subtotal, delivery, total) with clean state model.
+  • Order form validation & JSON payload assembly prepared for API integration; deployed on GH Pages.
+
+Image Filtering Web App (Flask + OpenCV)                           May 2025 – Present
+  • Flask backend with RESTful routes returning processed images (send_file / base64) on demand.
+  • Real-time previews via Fetch API; optimized repeated operations with cached transforms.
+
+Sudoku Solver (C++ / SFML)                                      Sept 2024 – Nov 2024
+  • Backtracking solver visualized step-by-step; UI highlights conflicts & provides hint suggestions.
+  • Demonstrated recursion, pruning, and interactive event-driven graphics.
+
+-------------------------------------------------------------------------------
+ACHIEVEMENTS
+  • JEE Advanced 2023: Top 6.4% | JEE Main 2023: Top 1.9%.
+  • WBJEE: Top ~1% among 100K+ candidates.
+  • Codeforces peak rating 1200+; 150+ LeetCode problems solved.
+  • 4th Place – Open IIT Data Analytics Competition 2024.
+
+-------------------------------------------------------------------------------
+TECHNICAL SKILLS
+Languages: C, C++, Python, HTML, CSS, JavaScript, Bash, SQL (MySQL)
+Libraries/Frameworks: Pandas, NumPy, Matplotlib, scikit-learn, TensorFlow, BeautifulSoup4, spaCy, OpenCV
+Tools & Platforms: Git, GitHub, VS Code, Jupyter Notebook, MS Office, Canva
+Concepts: Large Language Models, Prompt Engineering, Data Normalization, Speech Recognition
+
+-------------------------------------------------------------------------------
+COURSEWORK
+CS & Math: Programming & Data Structures (Lab/Theory), Linear Algebra, Advanced Calculus, PDE, Probability & Statistics, Transform Calculus
+Core/Domain: Geophysical Signal Processing, Geophysical Field Theory, Structural Geology, Petrology, Paleontology & Stratigraphy, Economics, Innovation & Entrepreneurship
+MOOCs: Machine Learning Specialization (Andrew Ng), Hugging Face Audio Course, MATLAB Onramp, Striver A2Z DSA Course
+
+-------------------------------------------------------------------------------
+LEADERSHIP & RESPONSIBILITY
+  • Led design & content team (Click KGP): coordinated event photography & post‑production workflow.
+
+-------------------------------------------------------------------------------
+OTHER
+  • Competitive Programming: Active practice—focus on data structures, recursion, DP, graph algorithms.
+  • Interests: Applied ML for low-resource languages, AI-assisted document intelligence, geophysical data modeling.
+
+-------------------------------------------------------------------------------
+© 2025 Dhruv Varshney

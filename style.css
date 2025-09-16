@@ -1,0 +1,284 @@
+/* --- HEADER STYLES BASED ON IMAGE --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e7ef;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.header-info {
+    flex: 1;
+}
+.header-info h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #1f2937;
+}
+.header-info .degree-info {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    color: #4b5563;
+    line-height: 1.4;
+}
+.contact-details p {
+    font-size: 13px;
+    margin: 0 0 4px 0;
+    color: #4b5563;
+}
+.header-logo img {
+    width: 80px;
+    height: auto;
+}
+/* --- END HEADER STYLES --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafc;
+    color: #343a40;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Resume Container */
+.resume {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+Header Styles
+header {
+    text-align: center;
+    position: relative;
+    border-bottom: 3px solid #e0e7ef;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-container {
+    display: inline-block;
+    text-align: center;
+}
+
+/* Header Info Styles
+.info h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.degree-info {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #4b5563;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: #4b5563;
+} */
+
+/* Logo Style */
+.logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.logo img {
+    width: 90px;
+    height: auto;
+}
+
+/* Section Styles */
+.section {
+    margin-top: 25px;
+}
+
+.section h2 {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border-left: 4px solid #3b82f6;
+}
+
+/* General Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+table th,
+table td {
+    border: 1px solid #e0e7ef;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #f3f4f6;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Project & Internship Item Styles */
+.item-container {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 3px solid #d1d5db;
+}
+
+.item-container h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #111827;
+}
+
+.duration {
+    float: right;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #6b7280;
+}
+
+.supervisor {
+    font-size: 0.95em;
+    color: #4b5563;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.role-description {
+    font-size: 14px;
+    font-style: italic;
+    color: #4b5563;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #f9fafb;
+    border-radius: 4px;
+}
+
+/* List Styles */
+.details-list,
+.skills-list,
+.achievement-list {
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+.details-list li,
+.skills-list li,
+.achievement-list li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.skills-list strong {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #6b7280;
+    font-size: 0.9em;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .resume { padding: 20px; margin: 20px; }
+    header {
+        position: static;
+        text-align: center;
+    }
+    .profile-container {
+        display: block;
+    }
+    .logo {
+        position: static;
+        margin-top: 15px;
+        display: inline-block;
+    }
+    .info h1 { font-size: 22px; }
+    .duration { float: none; display: block; margin-top: 3px; text-align: left; }
+    table th, table td { padding: 6px 8px; font-size: 13px; }
+}
+@media (max-width: 480px) {
+    .resume { margin: 10px; padding: 15px; border-radius: 8px; }
+    body { font-size: 14px; }
+    .info h1 { font-size: 20px; }
+    .section h2 { font-size: 16px; }
+    table th, table td { font-size: 12px; }
+}
+
+/* ======================================================= */
+/* =========== CLEAN PRINT STYLES (ONE A4 PAGE) ========== */
+/* ======================================================= */
+@media print {
+    @page { size: A4 portrait; margin: 0.75cm 0.9cm; }
+
+    body {
+        margin: 0; padding: 0; background:#fff; color:#000;
+        font-size: 9pt; line-height: 1.28;
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+
+    .resume { margin:0; padding:0; max-width:100%; box-shadow:none; border:none; }
+    header { margin:0 0 6px 0; padding:0 0 6px; border-bottom:1px solid #999; }
+    .logo img { width:60px; }
+    .info h1 { font-size:17pt; margin:0 0 2px; }
+    .degree-info { font-size:10pt; margin:0 0 2px; }
+    .contact-info { font-size:8.5pt; line-height:1.25; margin:0; }
+
+    .section { margin-top:8px; }
+    .section h2 {
+        font-size:11pt; margin:0 0 4px; padding:2px 6px; line-height:1.1;
+        background:#eee !important; border-left:3px solid #555; border-radius:0;
+    }
+
+    table { width:100%; margin:3px 0; border-collapse:collapse; }
+    table th, table td { padding:3px 5px; font-size:8pt; line-height:1.22; border:1px solid #bbb; }
+    table th { background:#eee !important; }
+
+    .item-container { margin:0 0 5px; padding-left:6px; border-left:2px solid #999; }
+    .item-container h3 { font-size:9.5pt; margin:0 0 1px; font-weight:600; }
+    .duration { float:right; font-size:8pt; font-style:italic; }
+    .supervisor { font-size:8pt; margin:0 0 2px; }
+    .role-description { font-size:8pt; line-height:1.25; padding:3px 4px; margin:0 0 2px; background:#f4f4f4; }
+
+    .details-list, .skills-list, .achievement-list {
+        padding-left:14px; margin:1px 0 2px; list-style:disc;
+    }
+    .details-list li, .skills-list li, .achievement-list li {
+        margin:0 0 1.5px; font-size:8pt; line-height:1.22; letter-spacing:-0.1px;
+    }
+    .skills-list strong { font-weight:600; }
+
+    /* Avoid breaks in key blocks */
+    .section, .item-container, table { page-break-inside: avoid; }
+    h1, h2, h3 { page-break-after: avoid; }
+
+    footer { display:none; }
+}
