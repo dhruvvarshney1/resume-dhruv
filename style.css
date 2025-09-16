@@ -2,33 +2,35 @@
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* keep text aligned to top */
+    gap: 12px;
     border-bottom: 2px solid #e0e7ef;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding: 8px 0 10px; /* tighter header padding */
+    margin-bottom: 14px; /* reduce whitespace below header */
 }
 .header-info {
     flex: 1;
 }
 .header-info h1 {
-    font-size: 24px;
+    font-size: 21px; /* smaller, still prominent */
     font-weight: 700;
-    margin: 0 0 5px 0;
+    margin: 0 0 2px 0; /* tighter */
+    line-height: 1.15;
     color: #1f2937;
 }
 .header-info .degree-info {
-    font-size: 14px;
-    margin: 0 0 10px 0;
+    font-size: 13px;
+    margin: 0 0 6px 0; /* reduce gap */
     color: #4b5563;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 .contact-details p {
-    font-size: 13px;
-    margin: 0 0 4px 0;
+    font-size: 12px;
+    margin: 0 0 2px 0;
     color: #4b5563;
 }
 .header-logo img {
-    width: 80px;
+    width: 64px; /* smaller logo */
     height: auto;
 }
 /* --- END HEADER STYLES --- */
@@ -51,7 +53,8 @@ body {
     border-radius: 12px;
 }
 
-Header Styles
+/* Legacy header styles removed to prevent overrides of compact header */
+/* Header Styles (legacy)
 header {
     text-align: center;
     position: relative;
@@ -59,11 +62,11 @@ header {
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
-
 .profile-container {
     display: inline-block;
     text-align: center;
 }
+*/
 
 /* Header Info Styles
 .info h1 {
@@ -85,16 +88,9 @@ header {
     color: #4b5563;
 } */
 
-/* Logo Style */
-.logo {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.logo img {
-    width: 90px;
-    height: auto;
-}
+/* Logo Style (legacy absolute positioning removed) */
+/* .logo { position:absolute; top:0; right:0; }
+.logo img { width: 90px; height: auto; } */
 
 /* Section Styles */
 .section {
@@ -246,11 +242,19 @@ footer {
     }
 
     .resume { margin:0; padding:0; max-width:100%; box-shadow:none; border:none; }
-    header { margin:0 0 6px 0; padding:0 0 6px; border-bottom:1px solid #999; }
-    .logo img { width:60px; }
-    .info h1 { font-size:17pt; margin:0 0 2px; }
-    .degree-info { font-size:10pt; margin:0 0 2px; }
-    .contact-info { font-size:8.5pt; line-height:1.25; margin:0; }
+    header { 
+        display:flex; 
+        justify-content:space-between; 
+        align-items:flex-start; 
+        gap:10px; 
+        margin:0 0 6px 0; 
+        padding:4px 0 6px; 
+        border-bottom:1px solid #999; 
+    }
+    .header-logo img { width:50px; height:auto; }
+    .header-info h1 { font-size:16pt; margin:0 0 2px; line-height:1.15; }
+    .header-info .degree-info { font-size:9.5pt; margin:0 0 3px; line-height:1.25; }
+    .contact-details p { font-size:8.2pt; margin:0 0 2px; line-height:1.2; }
 
     .section { margin-top:8px; }
     .section h2 {
