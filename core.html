@@ -17,8 +17,9 @@
 <body>
     <!-- Tab Navigation -->
     <div class="tab-container">
-        <a href="index.html" class="tab-btn tab-link">Non-Core CV</a>
-        <button class="tab-btn active" data-tab="core">Departmental Core CV</button>
+        <a href="index.html" class="tab-btn tab-link">SDE CV</a>
+        <a href="data.html" class="tab-btn tab-link">Data Science CV</a>
+        <button class="tab-btn active" type="button" disabled>Departmental Core CV</button>
     </div>
 
     <div class="resume">
@@ -74,22 +75,6 @@
             </table>
             <p class="cgpa-note"><small>* CGPA till 4th Semester</small></p>
         </section>
-
-        <section class="section internships">
-            <h2>Internships & Research</h2>
-            <div class="item-container">
-                <h3><strong>Vedvani:</strong> Transcribing Spoken Sanskrit Shlokas<span class="duration">May '24 - Nov '24</span></h3>
-                <p class="supervisor">Under Prof. Pawan Goyal, IIT Kharagpur</p>
-                <p class="role-description">Engineered a <strong>speech-to-text pipeline</strong> by scraping Sanskrit web text with svaras and training a Wav2Vec2 model on the audio-text dataset</p>
-                <ul class="details-list">
-                    <li>Scraped a website using <strong>BeautifulSoup</strong> to gather a dataset of transcripts and corresponding audio files.</li>
-                    <li>Cleaned and preprocessed the dataset to ensure consistency and accurate alignment between audio and text.</li>
-                    <li>Trained a <strong>Wav2Vec2 model</strong> on the prepared dataset to perform speech-to-text transcription for Sanskrit.</li>
-                    <li>Evaluated model performance using <strong>Word Error Rate (WER)</strong> and <strong>Character Error Rate (CER)</strong> metrics, achieving improvements.</li>
-                </ul>
-            </div>
-        </section>
-
         <section class="section projects">
             <h2>Academic Projects</h2>
             <div class="item-container">
@@ -145,6 +130,16 @@
             <h2>Positions of Responsibility</h2>
             <ul class="achievement-list">
                 <li><strong>Head of Design and Content Writing | Click Kgp:</strong> Proficient in multiple photography styles including event, lifestyle, and wildlife, with advanced post-production skills.</li>
+            </ul>
+        </section>
+
+        <section class="section interests">
+            <h2>Interests</h2>
+            <ul class="achievement-list">
+                <li><strong>Geophysical Research:</strong> Seismic data interpretation, signal processing, and computational geophysics applications.</li>
+                <li><strong>Machine Learning & AI:</strong> Applications of AI in geophysics and Earth sciences.</li>
+                <li><strong>Computational Methods:</strong> Numerical modeling, data analysis, and scientific computing.</li>
+                <li><strong>Photography & Documentation:</strong> Scientific visualization and visual communication of complex data.</li>
             </ul>
         </section>
     </div>

@@ -17,7 +17,8 @@
 <body>
     <!-- Tab Navigation -->
     <div class="tab-container">
-        <button class="tab-btn active" data-tab="core">Non-Core CV</button>
+        <button class="tab-btn active" type="button" disabled>SDE CV</button>
+        <a href="data.html" class="tab-btn tab-link">Data Science CV</a>
         <a href="core.html" class="tab-btn tab-link">Departmental Core CV</a>
     </div>
 
@@ -75,27 +76,47 @@
             <p class="cgpa-note"><small>* CGPA till 4th Semester</small></p>
         </section>
 
+        <section class="section interests">
+            <h2>Interests</h2>
+            <ul class="achievement-list">
+                <li><strong>Full-Stack Engineering:</strong> Building performant web apps, progressive enhancement, and scalable architectures.</li>
+                <li><strong>DevOps & Automation:</strong> CI/CD pipelines, automated testing, and cloud-native deployments.</li>
+                <li><strong>Front-end Craftsmanship:</strong> Accessible UI systems, design systems, and performance optimization.</li>
+                <li><strong>Competitive Programming:</strong> Algorithm design, data structures, and problem-solving marathons.</li>
+                <li><strong>Product Thinking:</strong> Blending UX, engineering, and business impact in shipped features.</li>
+            </ul>
+        </section>
         <section class="section internships">
-            <h2>Internships</h2>
-            <div class="item-container core-only">
+            <h2>Experience</h2>
+            <div class="item-container">
                 <h3><strong>Analyst Programmer</strong> - Xceedance Consulting Private Limited<span class="duration">May '25 - Oct '25</span></h3>
-                 <p class="role-description">Extraction of Information from Insurance data using <strong>LLM</strong> and <strong>Normalization</strong> of insurance specific data.</p>
+                <p class="role-description">Shipped production-grade services that transform raw insurance artifacts into reliable, API-ready payloads.</p>
                 <ul class="details-list">
-                    <li>Generated Data using <strong>genAI</strong> and covering various types of data classes that can occur in insurance.</li>
-                    <li>Applied <strong>Exploratory data analysis</strong> on the insurance data and cleaned the data, enhancing data quality for downstream tasks.</li>
-                    <li><strong>Normalized data</strong> by standardizing and parsing names to ensure consistency in data format throughout the dataset.</li>
-                    <li>Built and deployed a <strong>Few-Shot learning model</strong> with the <strong>Azure AI API</strong> to accurately classify key entities in the data.</li>
+                    <li>Engineered Python ETL services that standardized policy and claims entities, unlocking dependable downstream automation.</li>
+                    <li>Wrapped Azure AI few-shot classifiers inside resilient REST endpoints with request batching and retries.</li>
+                    <li>Built validation utilities and monitoring dashboards to surface schema drifts and ingestion anomalies early.</li>
+                    <li>Partnered with product and underwriting teams to translate manual review workflows into deployable features.</li>
+                </ul>
+            </div>
+            <div class="item-container">
+                <h3><strong>Freelance Full-Stack Developer</strong> - Home-coming Cloud Kitchen<span class="duration">May '25 - Present</span></h3>
+                <p class="role-description">Delivered a production-ready ordering portal for a local business with end-to-end ownership across the stack.</p>
+                <ul class="details-list">
+                    <li>Implemented a modular component system in vanilla JavaScript for responsive menus, cart flows, and order summaries.</li>
+                    <li>Automated form validation, pricing calculations, and fulfilment-ready JSON payloads for downstream integrations.</li>
+                    <li>Optimized perceived performance using route prefetching, asset compression, and accessibility-first markup.</li>
+                    <li>Set up Git-based workflows with preview deployments and structured project documentation.</li>
                 </ul>
             </div>
             <div class="item-container">
                 <h3><strong>Vedvani:</strong> Transcribing Spoken Sanskrit Shlokas<span class="duration">May '24 - Nov '24</span></h3>
                 <p class="supervisor">Under Prof. Pawan Goyal, IIT Kharagpur</p>
-                <p class="role-description">Engineered a <strong>speech-to-text pipeline</strong> by scraping Sanskrit web text with svaras and training a Wav2Vec2 model on the audio-text dataset</p>
+                <p class="role-description">Engineered a speech-to-text pipeline that stitched together scraping, preprocessing, model training, and evaluation tooling.</p>
                 <ul class="details-list">
-                    <li>Scraped a website using <strong>BeautifulSoup</strong> to gather a dataset of transcripts and corresponding audio files.</li>
-                    <li>Cleaned and preprocessed the dataset to ensure consistency and accurate alignment between audio and text.</li>
-                    <li>Trained a <strong>Wav2Vec2 model</strong> on the prepared dataset to perform speech-to-text transcription for Sanskrit.</li>
-                    <li>Evaluated model performance using <strong>Word Error Rate (WER)</strong> and <strong>Character Error Rate (CER)</strong> metrics, achieving improvements.</li>
+                    <li>Authored Python scrapers and cronable ingestion jobs to keep transcripts and audio in sync across releases.</li>
+                    <li>Versioned preprocessing workflows that generated training-ready manifests with reproducible augmentation recipes.</li>
+                    <li>Integrated <strong>Wav2Vec2</strong> fine-tuning scripts with automation for checkpointing and experiment tracking.</li>
+                    <li>Surfaced <strong>WER</strong>/<strong>CER</strong> dashboards to guide iterative improvements with data-backed decisions.</li>
                 </ul>
             </div>
         </section>
@@ -146,10 +167,11 @@
         <section class="section skills">
             <h2>Skills and Expertise</h2>
             <ul class="skills-list">
-                <li><strong>Languages:</strong> C, C++, Python, HTML, CSS, Javascript, Bash, MySQL</li>
-                <li><strong>Libraries & Frameworks:</strong> Pandas, NumPy, Matplotlib, scikit-learn, TensorFlow, BeautifulSoup4, spacy</li>
-                <li><strong>Tools & Platforms:</strong> VS Code, Sublime Text, Git, Github, Jupyter Notebook, MS Office, Canva</li>
-                <li><strong>Concepts:</strong> Large Language Models</li>
+                <li><strong>Languages:</strong> TypeScript, JavaScript, Python, C++, SQL, Bash</li>
+                <li><strong>Frameworks:</strong> React (hooks + SSR), Node.js/Express, Flask, SFML, Tailwind</li>
+                <li><strong>System Design:</strong> REST API design, event-driven flows, caching, and CI/CD pipelines</li>
+                <li><strong>Tooling:</strong> Git, GitHub Actions, Docker (basics), Vite, VS Code, Postman</li>
+                <li><strong>Practices:</strong> TDD-lite workflows, code reviews, documentation-first development</li>
             </ul>
         </section>
 
@@ -168,34 +190,10 @@
                 <li><strong>Head of Design and Content Writing | Click Kgp:</strong> Proficient in multiple photography styles including event, lifestyle, and wildlife, with advanced post-production skills.</li>
             </ul>
         </section>
+
     </div>
 
     <footer>&copy; Dhruv Varshney | IIT Kharagpur | 2027</footer>
-
-    <script>
-        // Tab switching functionality
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const activeTab = this.getAttribute('data-tab');
-                
-                // Update active tab button
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Show/hide content based on tab
-                const coreOnlyElements = document.querySelectorAll('.core-only');
-                const nonCoreOnlyElements = document.querySelectorAll('.non-core-only');
-                
-                if (activeTab === 'core') {
-                    coreOnlyElements.forEach(el => el.style.display = 'block');
-                    nonCoreOnlyElements.forEach(el => el.style.display = 'none');
-                } else {
-                    coreOnlyElements.forEach(el => el.style.display = 'none');
-                    nonCoreOnlyElements.forEach(el => el.style.display = 'block');
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
