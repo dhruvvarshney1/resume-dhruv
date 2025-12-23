@@ -1,0 +1,107 @@
+% Data Science CV - Dhruv Varshney
+% Compile: pdflatex data_cv.tex
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\begin{center}
+  {\LARGE \textbf{Dhruv Varshney} \hfill 23EX10013}\\
+  \vspace{0.5em}
+  \small Bachelor of Science in Exploration Geophysics (4-Year) --- Minor: Computer Science and Engineering\\
+  \small Indian Institute of Technology, Kharagpur\\
+  \vspace{0.5em}
+  \normalsize \href{mailto:dhruvvarshney2906@gmail.com}{dhruvvarshney2906@gmail.com} $\mid$ +91 85979 86847
+\end{center}
+
+\section*{Education}
+\begin{tabular}{@{}p{1.2cm} p{6.5cm} p{4.0cm} p{2.0cm}@{}}
+\textbf{Year} & \textbf{Degree / Exam} & \textbf{Institution} & \textbf{CGPA / Marks} \\
+2027 & 4 Year B.S & IIT Kharagpur & 8.3/10\\
+2023 & Central Board of Secondary Education (CBSE) & Kendriya Vidyalaya IIT Kharagpur & 91.2\\
+2021 & Central Board of Secondary Education (CBSE) & Kendriya Vidyalaya IIT Kharagpur & 97.6\\
+\end{tabular}
+\vspace{0.5em}
+\small{* CGPA till 5th Semester}
+
+\section*{Interests}
+\begin{itemize}[left=0pt]
+  \item \textbf{Applied Machine Learning:} LLMs, speech recognition, representation learning.
+  \item \textbf{Data Engineering:} Scalable ETL, data quality automation, analytics infrastructure.
+  \item \textbf{Statistical Modeling:} Experiment design and probabilistic analysis.
+  \item \textbf{Information Retrieval:} Semantic search and knowledge graph enrichment.
+  \item \textbf{Storytelling with Data:} Dashboarding and insight communication.
+\end{itemize}
+
+\section*{Experience}
+\textbf{Analyst Programmer}, Xceedance Consulting Private Limited \hfill May '25 -- Oct '25\\
+Extraction of information from insurance data using LLM workflows and domain-specific normalization.
+\begin{itemize}
+  \item Generated synthetic datasets with generative AI to cover edge-case policy structures.
+  \item Performed exploratory data analysis and cleaning to improve downstream reliability.
+  \item Normalized entity names and attributes for a consistent claims knowledge base.
+  \item Built and evaluated a few-shot model on Azure AI API to classify insurance entities.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Vedvani --- Transcribing Spoken Sanskrit Shlokas} (Under Prof. Pawan Goyal) \hfill May '24 -- Nov '24\\
+Engineered a speech-to-text pipeline and fine-tuned a Wav2Vec2 model for low-resource Sanskrit.
+\begin{itemize}
+  \item Scraped and aligned transcripts with audio recordings; normalized text preserving svaras.
+  \item Fine-tuned transformer-based speech models and applied data augmentation for robustness.
+  \item Evaluated using WER and CER with consistent gains.
+\end{itemize}
+
+\section*{Projects}
+\textbf{Real-Time AI Emergency Evacuation System} --- Self Project\\
+Engineered a computer vision system to compute optimal evacuation routes from live video.
+\begin{itemize}
+  \item Integrated YOLO for human detection and used homography to map detections to floorplans.
+  \item Implemented A* pathfinding to regenerate safe routes under 50 ms.
+  \item Optimized for 30 FPS using OpenCV and NumPy.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Prediction of House Prices} --- Kaggle\\
+Developed regression models and feature engineering pipelines; achieved strong leaderboard placement.
+\begin{itemize}
+  \item Engineered 200+ features and compared multiple regression models including XGBoost.
+  \item Used Bayesian optimization for hyperparameter tuning with cross-validation.
+  \item Achieved high R$^2$ and competitive RMSE; Kaggle rank: 2,111.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Spaceship Titanic, Titanic Survival Prediction} --- Kaggle\\
+Built end-to-end classification pipelines with careful feature engineering, tuning and evaluation.
+
+\section*{Awards and Achievements}
+\begin{itemize}
+  \item Top 6.4\% in JEE Advanced 2023; top 1.9\% in JEE Mains 2023.
+  \item Top 1\% in WBJEE among 100k+ candidates.
+  \item Peak Codeforces rating 1400+ (Specialist); solved 150+ LeetCode problems.
+  \item 4th place, Open IIT Data Analytics Competition 2024.
+\end{itemize}
+
+\section*{Skills}
+\begin{itemize}
+  \item \textbf{Languages:} Python, SQL, C++, Bash
+  \item \textbf{ML \\& AI:} scikit-learn, TensorFlow, Hugging Face Transformers, OpenCV, spaCy
+  \item \textbf{Data Ops:} Feature engineering, data validation, experiment tracking
+  \item \textbf{Visualization:} Matplotlib, Seaborn, Plotly
+\end{itemize}
+
+\section*{Coursework}
+Programming and Data Structures; Linear Algebra; Advanced Calculus; PDE; Probability and Statistics; Transform Calculus.
+
+\section*{Positions of Responsibility}
+Head of Design and Content Writing, Click Kgp --- photography and content design lead.
+
+\vfill
+\begin{center}\small{\copyright{} Dhruv Varshney | IIT Kharagpur | 2027}\end{center}
+\end{document}
