@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
+
+body {
+    background-color: #0b0d14; /* Deep dark background */
+    color: #a9b7c6; /* Soft terminal white/gray */
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 15px;
+    margin: 0;
+    padding: 20px 30px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#terminal {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* Prompt styles */
+.prompt { margin-right: 10px; }
+.prompt .user { color: #a6e22e; font-weight: bold; } /* Cyan/Green */
+.prompt .dir { color: #66d9ef; font-weight: bold; } /* Blue */
+
+/* Input line */
+#input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#cmd-input {
+    background: transparent;
+    border: none;
+    color: #e6e6e6;
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+    flex: 1;
+    outline: none;
+}
+
+/* Output styling */
+.output-box {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.cmd-echo {
+    margin-bottom: 10px;
+    color: #e6e6e6;
+}
+
+/* Specific elements */
+.ascii-art {
+    color: #f92672; /* Pink/Magenta for logo */
+    white-space: pre;
+    font-size: 14px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.highlight { color: #fd971f; font-weight: bold; } /* Orange */
+.accent { color: #e6db74; } /* Yellow */
+.dim { color: #75715e; } /* Gray */
+
+/* Custom Webkit Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0b0d14; }
+::-webkit-scrollbar-thumb { background: #3e3d32; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #75715e; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body { padding: 15px; font-size: 14px; }
+    .ascii-art { font-size: 8px; }
+    #cmd-input { font-size: 14px; }
+}
