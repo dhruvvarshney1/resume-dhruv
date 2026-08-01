@@ -3,18 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal - Dhruv Varshney</title>
+    <title>Dhruv Varshney</title>
     <link rel="icon" href="iitkgp_logo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="terminal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gui.css">
 </head>
 <body>
-    <div id="terminal">
-        <div id="output"></div>
-        <div id="input-line">
-            <span class="prompt"><span class="user">guest@dhruv</span>:<span class="dir">~</span>$</span>
-            <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" autofocus>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="nav-name">Dhruv Varshney</span>
+                <span class="nav-sub">Exploration Geophysics &bull; CS&amp;E Minor</span>
+            </div>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#projects">Projects</a>
+                <a href="skills.html">Skills</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-    </div>
-    <script src="terminal.js"></script>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Merging <span>Computational Physics</span> with Machine Intelligence.</h1>
+            <p>B.S. (Hons.) student at IIT Kharagpur with a CS&amp;E minor, building production-minded ML, LLM, and data systems. Currently exploring agentic workflows, quantitative ML, and low-resource language AI.</p>
+            <div class="hero-actions">
+                <a href="#work" class="btn-primary">View Work</a>
+                <div class="divider"></div>
+                <div class="hero-socials">
+                    <a href="https://github.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3-.3 6-1.5 6-6.5a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 5 3 6.2 6 6.5a4.8 4.8 0 0 0-1 3.2v4"></path></svg></a>
+                    <a href="https://linkedin.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                </a>
+            </div>
+        </section>
+
+        <section id="work" class="section">
+            <div class="section-title"><h2>01 / Selected Experience</h2></div>
+            <div class="section-content work-list">
+                <a class="work-item reveal" href="experience-polestar.html">
+                    <div class="work-header"><h3>Polestar Analytics / LLP</h3><span class="work-year">May 2026—</span></div>
+                    <p class="work-role">Machine Learning Intern · Noida</p>
+                    <p class="work-desc">Building leakage-safe demand and uplift modeling systems across feature engineering, model evaluation, forecasting, and scalable data workflows.</p>
+                    <div class="tags"><span class="tag">#Demand Modeling</span><span class="tag">#Uplift</span><span class="tag">#Databricks</span><span class="tag">#CatBoost</span></div>
+                </a>
+                <a class="work-item reveal" href="experience-xceedance.html">
+                    <div class="work-header">
+                        <h3>Xceedance Consulting</h3>
+                        <span class="work-year">2025</span>
+                    </div>
+                    <p class="work-role">Analyst Programmer Intern</p>
+                    <p class="work-desc">Built insurance document extraction workflows with LLM parsers, entity normalization, and Azure OpenAI few-shot classification, reaching 94.2% peak accuracy and 0.91 weighted F1.</p>
+                    <div class="tags">
+                        <span class="tag">#Azure AI</span><span class="tag">#LLM</span><span class="tag">#Data Analysis</span><span class="tag">#Normalization</span>
+                    </div>
+                </a>
+                <a class="work-item reveal" href="experience-vedvani.html">
+                    <div class="work-header">
+                        <h3>Dept. of CS, IIT Kharagpur</h3>
+                        <span class="work-year">2024</span>
+                    </div>
+                    <p class="work-role">Research Intern · Prof. Pawan Goyal</p>
+                    <p class="work-desc">Developed a robust Sanskrit ASR system by fine-tuning a Wav2Vec2/Transformer model. Engineered text normalization preserving tonal markers, achieving 12% relative WER reduction.</p>
+                    <div class="tags">
+                        <span class="tag">#Sanskrit ASR</span><span class="tag">#Wav2Vec2</span><span class="tag">#Hugging Face</span><span class="tag">#NLP</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="section-title"><h2>02 / Technical Projects</h2></div>
+            <div class="section-content project-grid">
+                <a class="project-item reveal" href="project-stock-market.html">
+                    <div class="project-header"><div><h3>Stock Market Prediction & Trading Simulator</h3><p class="project-type">Quantitative ML / Systems</p></div><span class="project-icon">↗</span></div>
+                    <p class="project-desc">A research-oriented market workflow combining feature engineering, tree models, order-book signals, backtesting, and trading simulation.</p>
+                </a>
+                <a class="project-item reveal" href="project-pokerbots.html">
+                    <div class="project-header">
+                        <div><h3>Jane Street Pokerbots</h3><p class="project-type">Game Theory / AI</p></div>
+                        <svg class="project-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </div>
+                    <p class="project-desc">Peak rank #30. High-performance Python bot utilizing Monte Carlo estimation and EV-based auction bidding.</p>
+                </a>
+                <a class="project-item reveal" href="project-evacuation.html">
+                    <div class="project-header">
+                        <div><h3>Emergency Evacuation</h3><p class="project-type">Computer Vision</p></div>
+                        <svg class="project-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </div>
+                    <p class="project-desc">YOLOv11 and HSV pipeline for real-time human detection mapping 3D routes to 2D floor plans at 30 FPS using A* pathfinding.</p>
+                </a>
+                <a class="project-item reveal" href="project-house-prices.html">
+                    <div class="project-header">
+                        <div><h3>Housing Price Prediction</h3><p class="project-type">Kaggle Machine Learning</p></div>
+                        <svg class="project-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </div>
+                    <p class="project-desc">Predictive regression models (XGBoost) combined with Bayesian Optimization for hyperparameter tuning. Engineered 200+ features.</p>
+                </a>
+                <a class="project-item reveal" href="project-spaceship-titanic.html">
+                    <div class="project-header">
+                        <div><h3>Titanic & Spaceship Kaggle</h3><p class="project-type">Kaggle Machine Learning</p></div>
+                        <svg class="project-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </div>
+                    <p class="project-desc">Survival prediction using XGBoost. High performance derived from deep EDA and refined feature engineering pipelines.</p>
+                </a>
+                <a class="project-item reveal" href="project-cloud-kitchen.html">
+                    <div class="project-header">
+                        <div><h3>Homecoming Cloud Kitchen</h3><p class="project-type">Full-Stack Web App</p></div>
+                        <svg class="project-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </div>
+                    <p class="project-desc">Architected a UI with responsive modular components for local kitchens. Implemented dynamic pricing recalculations.</p>
+                </a>
+                <a class="project-item reveal" href="project-image-filtering.html">
+                    <div class="project-header">
+                        <div><h3>Image-Filtering Web App</h3><p class="project-type">Computer Vision & Web</p></div>
+                        <svg class="project-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </div>
+                    <p class="project-desc">A Flask backend returning processed images on demand via CV2. Handled real-time previews via the Fetch API.</p>
+                </a>
+                <a class="project-item reveal" href="project-sudoku.html">
+                    <div class="project-header">
+                        <div><h3>Sudoku Solver</h3><p class="project-type">C++ / SFML</p></div>
+                        <svg class="project-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </div>
+                    <p class="project-desc">Backtracking solver visualized step-by-step. Built dynamic UI to highlight conflicts and present hints visually.</p>
+                </a>
+                <a class="project-item reveal" href="project-academic-outreach.html"><div class="project-header"><div><h3>Academic Outreach AI</h3><p class="project-type">Agentic AI / Streamlit</p></div><span class="project-icon">↗</span></div><p class="project-desc">Evidence-first LangGraph pipeline for grounded, reviewable faculty outreach drafts.</p></a>
+                <a class="project-item reveal" href="project-ml-pipeline.html"><div class="project-header"><div><h3>Classical ML Pipeline</h3><p class="project-type">Machine Learning Engineering</p></div><span class="project-icon">↗</span></div><p class="project-desc">Leakage-safe, configuration-driven workflow from raw CSV to diagnostics and artifacts.</p></a>
+                <a class="project-item reveal" href="project-dunnhumby-uplift.html"><div class="project-header"><div><h3>Dunnhumby Forecasting</h3><p class="project-type">Forecasting / Databricks</p></div><span class="project-icon">↗</span></div><p class="project-desc">Retail demand forecasting with time-series features, CatBoost, and distributed inference.</p></a>
+                <a class="project-item reveal" href="project-agentic-poc.html"><div class="project-header"><div><h3>Inventory-Replenishment POC</h3><p class="project-type">Agentic Systems</p></div><span class="project-icon">↗</span></div><p class="project-desc">Supplier-aware recommendations with demand sizing, eligibility, and MOQ gating.</p></a>
+                <a class="project-item reveal" href="project-dhruvgpt.html"><div class="project-header"><div><h3>DhruvGPT</h3><p class="project-type">AI Assistant</p></div><span class="project-icon">↗</span></div><p class="project-desc">Focused personal AI assistant exploration centered on useful interaction boundaries.</p></a>
+            </div>
+        </section>
+
+        <section id="about" class="profile-section" aria-labelledby="profile-title">
+            <div class="profile-shell">
+                <div class="profile-intro reveal">
+                    <div class="profile-avatar" role="img" aria-label="Monogram avatar for Dhruv Varshney"><span>DV</span><i></i></div>
+                    <div class="profile-heading"><p class="eyebrow">03 / Profile signal</p><h2 id="profile-title">Built between<br><em>earth & intelligence.</em></h2><p class="profile-summary">I’m Dhruv — an Exploration Geophysics student at IIT Kharagpur turning messy real-world signals into useful systems with machine learning, computer vision, and thoughtful software.</p><div class="profile-actions"><a class="btn-primary" href="mailto:dhruvvarshney2906@gmail.com">Start a conversation ↗</a><a class="profile-text-link" href="skills.html">Explore skill network →</a></div></div>
+                </div>
+                <div class="profile-status reveal"><span class="status-dot"></span><span>Currently building</span><strong>Quantitative ML & agent systems</strong><span class="status-location">Kharagpur, India · 2027</span></div>
+                <div class="profile-stats reveal" aria-label="Portfolio statistics"><div><strong data-count="14">0</strong><span>projects shipped</span></div><div><strong data-count="3">0</strong><span>research & work roles</span></div><div><strong data-count="30">0</strong><span>tools in the stack</span></div><div><strong data-count="8.41" data-decimals="2">0</strong><span>current CGPA</span></div></div>
+                <div class="profile-lower">
+                    <div class="profile-focus reveal"><p class="eyebrow">What I reach for</p><div class="focus-card"><span class="focus-number">01</span><div><h3>Applied intelligence</h3><p>Low-resource language AI, document understanding, and data products that hold up outside the notebook.</p></div></div><div class="focus-card"><span class="focus-number">02</span><div><h3>Physical signals</h3><p>Exploration geophysics gives me a bias for noisy inputs, measurable outcomes, and models grounded in reality.</p></div></div></div>
+                    <div class="profile-credentials reveal"><p class="eyebrow">Foundation</p><div class="credential-card"><span class="credential-mark">KGP</span><div><h3>IIT Kharagpur</h3><p>B.S. (Hons.) Exploration Geophysics · CS&amp;E Minor</p><strong>8.41 / 10 CGPA · 2023—2027</strong></div></div><div class="credential-card compact"><span class="credential-mark">91</span><div><h3>Academic record</h3><p>CBSE Class XII · 91.2% &nbsp; / &nbsp; Class X · 97.6%</p></div></div><div class="profile-chips"><span>Python</span><span>Quant ML</span><span>Agent systems</span><span>Data systems</span></div></div>
+                </div>
+                <div class="profile-proof reveal"><div><span class="proof-value">#30</span><span>Jane Street<br>Pokerbots peak</span></div><div><span class="proof-value">12%</span><span>relative WER<br>reduction</span></div><div><span class="proof-value">4th</span><span>Open IIT Data<br>Analytics 2024</span></div><a href="mailto:dhruvvarshney2906@gmail.com" aria-label="Email Dhruv Varshney">Available for interesting problems ↗</a></div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="contact-title">Get in Touch</h2>
+            <a href="mailto:dhruvvarshney2906@gmail.com" class="contact-email">dhruvvarshney2906@gmail.com</a>
+            <div class="contact-socials"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">Codeforces</a></div>
+        </section>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 Dhruv Varshney</span>
+        <div class="footer-location"><span>Kharagpur, WB</span><div class="dot"></div></div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+        }), { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((item, index) => { item.style.setProperty('--delay', `${index * 55}ms`); observer.observe(item); });
+    </script>
+    <script src="detail.js"></script>
+    <script src="project-cards.js"></script>
+    <script src="profile.js"></script>
 </body>
 </html>

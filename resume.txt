@@ -1,12 +1,12 @@
 DHROOV VARSHNEY | 23EX10013
-BS (Exploration Geophysics), Indian Institute of Technology Kharagpur (2023–2027)
+BS (Exploration Geophysics, CS&E Minor), Indian Institute of Technology Kharagpur (2023–2027)
 Email: dhruvvarshney2906@gmail.com | Phone: +91 85979 86847 | LinkedIn: <add> | GitHub: <add>
 Location: Kharagpur, India
 
 -------------------------------------------------------------------------------
 EDUCATION
 IIT Kharagpur (Bachelor of Science, Exploration Geophysics)                2027
-  CGPA: 8.34 / 10 (Current)
+  CGPA: 8.41 / 10 (Current)
 Kendriya Vidyalaya IIT Kharagpur (CBSE Class XII)                          2023
   Percentage: 91.2%
 Kendriya Vidyalaya IIT Kharagpur (CBSE Class X)                            2021
@@ -14,20 +14,58 @@ Kendriya Vidyalaya IIT Kharagpur (CBSE Class X)                            2021
 
 -------------------------------------------------------------------------------
 EXPERIENCE & RESEARCH INTERNSHIPS
-Analyst Programmer Intern, Xceedance Consulting Pvt Ltd          May 2025 – Present
-  • Extracting structured information from insurance documents using LLM-driven parsing.
-  • Generated synthetic domain data with GenAI to extend coverage of rare policy classes.
-  • Standardized/normalized entity fields (names, classes) reducing downstream parse errors ~15%.
-  • Designed few-shot classification prompts on Azure OpenAI for key entity tagging.
+Machine Learning Intern, Polestar Analytics                         May 2026 – Present
+  • Building leakage-safe retail demand and uplift modeling systems across baseline purchase probability, promotion effect, and uplift estimation.
+  • Engineering trend, Fourier seasonality, lag, rolling, household, basket, store, and product features with chronological validation.
+  • Working across CatBoost, LightGBM, XGBoost, Optuna, PySpark, Databricks, and calibrated classification workflows.
+
+Analyst Programmer Intern, Xceedance Consulting Pvt Ltd          May 2025 – Oct 2025
+  • Extracted structured information from insurance data using LLM workflows and domain-specific normalization.
+  • Generated diverse synthetic datasets with GenAI to cover edge-case policy structures and extend coverage.
+  • Performed exploratory data analysis (EDA) and cleaned data, standardizing/normalizing entity fields to enforce consistency and reduce downstream parse errors by ~15%.
+  • Built and evaluated a few-shot classification model on Azure OpenAI API for key entity tagging, reaching 94.2% peak accuracy and 0.91 weighted F1.
 
 Undergraduate Research Intern, Vedvani (Prof. Pawan Goyal)       May 2024 – Nov 2024
-  • Built Sanskrit speech-to-text pipeline: scraped aligned audio/text (BeautifulSoup) incl. svaras.
-  • Cleaned & aligned dataset; engineered text normalization preserving tonal markers.
-  • Trained Wav2Vec2 / transformer acoustic model; tuned decoding for low-resource phonetics.
-  • Achieved 12% relative WER reduction vs baseline; tracked WER & CER for iterative improvement.
+  • Built Sanskrit speech-to-text pipeline: scraped and aligned audio/text transcripts using BeautifulSoup and bespoke scripts.
+  • Cleaned and aligned the dataset; engineered text normalization preserving svaras (tonal markers) to improve phoneme-level accuracy.
+  • Fine-tuned a Wav2Vec2 / transformer acoustic model for low-resource Sanskrit phonetics, introducing data augmentation.
+  • Tracked progress via Word Error Rate (WER) and Character Error Rate (CER), achieving a 12% relative WER reduction vs baseline.
 
 -------------------------------------------------------------------------------
 PROJECTS
+Stock Market Prediction & Trading Simulator                         Research Project
+  • Exploring Random Forest, XGBoost, CatBoost, and LightGBM models for market prediction using NSE data and engineered market features.
+  • Designing backtesting, trading simulation, market microstructure, bid/ask depth, and order-book analysis workflows for realistic evaluation.
+  • Investigating reinforcement-learning market simulation and algorithmic trading applications.
+
+Jane Street Pokerbots                                              Competition
+  • Developed a high-performance Python bot utilizing Monte Carlo estimation and EV-based auction bidding.
+  • Applied Game Theory and AI principles to achieve a peak rank of #30 in the competition.
+
+Real-Time AI Emergency Evacuation System                           Project
+  • Engineered a computer vision system that dynamically calculates optimal evacuation routes in real-time from live video feeds.
+  • Integrated YOLOv11 for human detection and HSV color-thresholding for hazard simulation, processing frames at 30 FPS.
+  • Applied homography to map 3D camera coordinates onto a 2D digital floor plan with high spatial accuracy.
+  • Implemented the A* pathfinding algorithm to dynamically regenerate safe routes in under 50 ms.
+  • Optimized real-time performance using OpenCV and NumPy for low-latency processing and visualization overlays.
+
+Prediction of House Prices (Kaggle)                                Competition
+  • Engineered 200+ features from 79 variables using statistical imputation and one-hot encoding, improving model performance by 30%.
+  • Developed and compared 6 regression models (including RF, GB, XGBoost), achieving 90% R² score and $25,450 RMSE.
+  • Implemented Bayesian Optimization with scikit-optimize to tune XGBoost hyperparameters, reducing prediction error by 50%.
+  • Achieved Kaggle leaderboard rank: 2,111 out of thousands through extensive EDA and feature importance analysis.
+
+Spaceship Titanic (Kaggle)                                         Competition
+  • Engineered a full pipeline covering feature creation (amenity aggregations, cabin parsing), missing-value strategy, and one-hot encoding.
+  • Benchmarked and tuned Random Forest, SVM, and Naive Bayes classifiers with GridSearchCV, generating calibrated probabilities.
+  • Achieved Kaggle rank 1,582 with public leaderboard score 0.75403, producing automated submission artifacts.
+
+Titanic Survival Prediction (Kaggle)                               Competition
+  • Analyzed 891 training samples uncovering survival patterns focused on passenger demographics and ticket class.
+  • Built production-ready preprocessing pipeline with statistical imputation, one-hot encoding, and feature alignment.
+  • Developed an XGBoost classifier with tuned hyperparameters achieving ROC-AUC 0.82-0.88, identifying top predictive features.
+  • Achieved Kaggle rank 3,916 with accuracy 0.77511, generating predictions with comprehensive evaluation suite.
+
 Home-coming Cloud Kitchen Website                                   May 2025 – Present
   • Responsive static site (HTML, CSS, JS) for local kitchen; modular components and menu system.
   • Dynamic availability & pricing recalculation (subtotal, delivery, total) with clean state model.
@@ -51,9 +89,9 @@ ACHIEVEMENTS
 -------------------------------------------------------------------------------
 TECHNICAL SKILLS
 Languages: C, C++, Python, HTML, CSS, JavaScript, Bash, SQL (MySQL)
-Libraries/Frameworks: Pandas, NumPy, Matplotlib, scikit-learn, TensorFlow, BeautifulSoup4, spaCy, OpenCV
-Tools & Platforms: Git, GitHub, VS Code, Jupyter Notebook, MS Office, Canva
-Concepts: Large Language Models, Prompt Engineering, Data Normalization, Speech Recognition
+Libraries/Frameworks: Pandas, NumPy, Matplotlib, scikit-learn, CatBoost, LightGBM, XGBoost, PyTorch, TensorFlow, PySpark, BeautifulSoup4, spaCy, OpenCV
+Tools & Platforms: Databricks, Spark, Git, GitHub, VS Code, Jupyter Notebook, Azure AI, LangChain, LangGraph, MLflow
+Concepts: Machine Learning, Uplift Modeling, Time-Series Validation, Large Language Models, Agentic Systems, Prompt Engineering, Data Normalization, Speech Recognition, Quantitative Finance
 
 -------------------------------------------------------------------------------
 COURSEWORK
