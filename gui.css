@@ -41,15 +41,18 @@ nav {
   top: 0;
   width: 100%;
   z-index: 50;
+  color: white;
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  mix-blend-mode: difference;
   transition: all 0.5s;
   padding: 32px 0;
   border-bottom: 1px solid transparent;
 }
 
 nav.scrolled {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.14);
   padding: 16px 0;
   border-bottom-color: var(--border);
 }
@@ -77,7 +80,8 @@ nav.scrolled {
 
 .nav-sub {
   font-size: 10px;
-  color: var(--zinc-400);
+  color: currentColor;
+  opacity: .65;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -90,7 +94,7 @@ nav.scrolled {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--zinc-500);
+  color: currentColor;
 }
 
 .nav-links a {
@@ -98,15 +102,20 @@ nav.scrolled {
 }
 
 .nav-links a:hover {
-  color: black;
+  color: currentColor;
 }
 
 /* Main */
 main {
+  display: flex;
+  flex-direction: column;
   max-width: 1152px;
   margin: 0 auto;
-  padding: 192px 24px 96px;
+  padding: 0 24px 96px;
 }
+
+main > .profile-section { order: -2; }
+main > .contact-section { order: 99; }
 
 /* Hero */
 .hero {
@@ -114,6 +123,14 @@ main {
   margin-bottom: 192px;
   animation: fadeUp 1s ease-out;
 }
+
+.profile-section > .hero { max-width: 896px; margin-bottom: 120px; }
+.profile-section > .hero h1 { color: #fff; }
+.profile-section > .hero h1 span { color: #a1a1aa; }
+.profile-section > .hero p { color: #a1a1aa; }
+.profile-section > .hero .divider { background: rgba(255,255,255,.25); }
+.profile-section > .hero .hero-socials { color: #a1a1aa; }
+.profile-section > .hero .hero-socials a:hover { color: #fff; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
