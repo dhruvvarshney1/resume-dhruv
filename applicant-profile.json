@@ -1,0 +1,619 @@
+{
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-08-08",
+    "purpose": "Complete applicant dossier for generating personalized Master's inquiry emails to prospective faculty supervisors. Designed as the profile input for the Academic Outreach AI pipeline.",
+    "usage_notes": [
+      "Every claim here is verifiable against a repository, a report, or a competition leaderboard. Draft emails using only facts present in this file.",
+      "email_kit contains pre-approved phrasings and quotable metrics; prefer them over paraphrasing technical sections, which are written for accuracy rather than for prose.",
+      "constraints.do_not_claim lists overstatements to avoid. Treat it as a hard filter on generated text.",
+      "Fields set to null are genuinely unknown and must be filled by the applicant before use; never invent a value for them."
+    ],
+    "evidence_policy": "No peer-reviewed publications. No claimed affiliations beyond those listed. Metrics are reported exactly as measured, with the evaluation setting stated alongside each one."
+  },
+
+  "applicant": {
+    "name": "Dhruv Varshney",
+    "email": "dhruvvarshney2906@gmail.com",
+    "phone": "+91 85979 86847",
+    "location": "Kharagpur, West Bengal, India",
+    "headline": "B.S. (Hons.) Exploration Geophysics with Computer Science & Engineering minor, IIT Kharagpur, 2023-2027",
+    "links": {
+      "github": "https://github.com/dhruvvarshney1",
+      "portfolio": null,
+      "linkedin": null,
+      "google_scholar": null
+    },
+    "positioning_statement": "An undergraduate at IIT Kharagpur working at the intersection of applied machine learning and systems engineering. My geophysics training is fundamentally about extracting signal from noisy, expensive, incomplete measurements, and that framing carries directly into the machine learning work I care about: low-resource speech recognition, document understanding under real operational constraints, and forecasting where the evaluation setup matters as much as the model.",
+    "what_i_bring_to_a_lab": [
+      "I build complete systems, not notebooks. Every project listed here runs end to end, from data acquisition through evaluation, and most produce reproducible artifacts.",
+      "I measure honestly, including when the measurement is unflattering. On the Vedvani corpus I ran a verification pass that found roughly 59% of training transcripts disagreed with the canonical mapping, and reported it rather than training quietly on top of it.",
+      "I have worked on genuinely low-resource problems where the dataset has to be constructed before any modeling can begin.",
+      "Industry experience shipping ML into workflows with human reviewers, audit requirements, and correctness constraints."
+    ]
+  },
+
+  "education": [
+    {
+      "degree": "B.S. (Hons.) in Exploration Geophysics, minor in Computer Science & Engineering",
+      "institution": "Indian Institute of Technology Kharagpur",
+      "start": 2023,
+      "end": 2027,
+      "in_progress": true,
+      "grade": { "value": 8.41, "scale": 10, "label": "CGPA (current)" },
+      "relevant_coursework": [
+        "Programming and Data Structures",
+        "Linear Algebra",
+        "Advanced Calculus",
+        "Partial Differential Equations",
+        "Probability and Statistics",
+        "Transform Calculus",
+        "Geophysical Signal Processing",
+        "Geophysical Field Theory",
+        "Structural Geology",
+        "Petrology",
+        "Paleontology and Stratigraphy",
+        "Economics",
+        "Innovation and Entrepreneurship"
+      ],
+      "note_for_outreach": "The signal processing and transform calculus coursework is directly relevant to speech and time-series work; the geophysics core is about inference from sparse, noisy physical measurements."
+    },
+    {
+      "degree": "CBSE Class XII",
+      "institution": "Kendriya Vidyalaya IIT Kharagpur",
+      "end": 2023,
+      "grade": { "value": 91.2, "scale": 100, "label": "Percentage" }
+    },
+    {
+      "degree": "CBSE Class X",
+      "institution": "Kendriya Vidyalaya IIT Kharagpur",
+      "end": 2021,
+      "grade": { "value": 97.6, "scale": 100, "label": "Percentage" }
+    }
+  ],
+
+  "graduate_study_intent": {
+    "degree_sought": "Master's (research-oriented preferred)",
+    "target_intake": null,
+    "target_countries": null,
+    "funding_status": null,
+    "availability": "Graduating 2027; available from the intake following graduation.",
+    "primary_research_interests": [
+      {
+        "area": "Speech and language technology for low-resource languages",
+        "statement": "Building ASR for languages with no usable public corpus, where dataset construction, script normalization, and vocabulary design matter as much as model architecture.",
+        "evidence": ["vedvani"]
+      },
+      {
+        "area": "Applied NLP and information extraction",
+        "statement": "Getting structured, trustworthy records out of unstructured domain documents, including where the model must abstain rather than guess.",
+        "evidence": ["xceedance", "academic-outreach-ai"]
+      },
+      {
+        "area": "Trustworthy and human-in-the-loop AI systems",
+        "statement": "Designing pipelines where a language model is confined to the parts it is actually reliable for, with deterministic logic and explicit human checkpoints around it.",
+        "evidence": ["agentic-inventory-poc", "academic-outreach-ai", "xceedance"]
+      },
+      {
+        "area": "Time-series forecasting and causal/uplift modeling",
+        "statement": "Leakage-safe forecasting where the validation design determines whether a reported number means anything.",
+        "evidence": ["polestar", "dunnhumby-forecasting"]
+      },
+      {
+        "area": "Machine learning for geophysical and physical-sensor data",
+        "statement": "Applying the same signal-extraction methods to the noisy, expensively acquired measurements that my degree is built around.",
+        "evidence": ["education"]
+      }
+    ],
+    "why_masters": "My undergraduate work has been broad and applied, and it has repeatedly hit the same wall: the interesting problems in low-resource speech and trustworthy extraction need depth I cannot reach through project work alone. I want to do sustained research on a single problem with proper supervision rather than continue accumulating prototypes."
+  },
+
+  "experience": [
+    {
+      "id": "polestar",
+      "title": "Machine Learning Intern",
+      "organization": "Polestar Analytics / Polestar LLP",
+      "location": "Noida, India",
+      "start": "2026-05-15",
+      "end": null,
+      "current": true,
+      "one_line": "Building leakage-safe retail demand and uplift modeling systems on a production Databricks stack.",
+      "problem": "Retail promotional decisions require separating what a store would have sold anyway from what a promotion actually caused, across thousands of product-store-week combinations. Naive models conflate the two and overstate promotional impact.",
+      "approach": [
+        "Phased pipeline that estimates baseline purchase behaviour first, then promotional effect, then the uplift attributable to the promotion, rather than fitting a single conflated model.",
+        "Hierarchical modeling so that sparse product-store combinations borrow strength from their group rather than fitting noise independently.",
+        "Feature engineering across trend components, Fourier seasonality terms, lag features, rolling statistics, and household, basket, store, and product-level signals.",
+        "Chronological validation throughout, so no feature can see information unavailable at prediction time.",
+        "SQL-built relational tables so multiple source tables can be joined into consistent modeling datasets."
+      ],
+      "methods": [
+        "Baseline-vs-promotional two-model decomposition",
+        "Hierarchical modeling (CatBoost primary; PyMC and other hierarchical approaches evaluated)",
+        "Statistical relationship analysis in linear models via statsmodels",
+        "Leakage-safe rolling feature construction",
+        "Probability calibration and reproducibility checks"
+      ],
+      "results": [
+        { "metric": "status", "value": "Ongoing", "note": "Internship in progress as of August 2026; specific production metrics are confidential." }
+      ],
+      "skills": ["Python", "pandas", "NumPy", "scikit-learn", "CatBoost", "LightGBM", "XGBoost", "Optuna", "PySpark", "Databricks", "SQL", "statsmodels", "PyMC", "uplift modeling", "demand forecasting", "hierarchical modeling", "feature engineering", "model calibration"],
+      "research_relevance": "Direct exposure to causal-flavoured estimation (uplift) and to the practical reality that validation design, not model class, decides whether a forecasting result is real.",
+      "confidentiality": "Commercial work. Describe methods and approach; do not state client names, data volumes, or internal performance figures.",
+      "talking_points": [
+        "Why baseline and promotional effects must be modeled separately before uplift can be estimated.",
+        "Why chronological validation is non-negotiable for retail time series, and what leaks without it."
+      ]
+    },
+    {
+      "id": "xceedance",
+      "title": "Analyst Programmer Intern",
+      "organization": "Xceedance Consulting Pvt. Ltd.",
+      "location": "India",
+      "start": "2025-05",
+      "end": "2025-10",
+      "duration_months": 6,
+      "one_line": "Built an LLM-plus-fuzzy-matching pipeline that extracts and canonicalizes the four counterparties on a commercial insurance risk out of unstructured policy documents.",
+      "problem": "Commercial insurance processing depends on correctly identifying four distinct parties on every risk: Named Insured, Underwriter, Broker, and Reinsurer. Two failure modes break rule-based parsers. First, role ambiguity: brokers and underwriters are both company names in similar syntactic positions, so position-based rules guess wrong whenever a document deviates from house style. Second, naming variance: 'Acme Corp', 'Acme Corporation LLC', and 'Acme Inc.' are one counterparty that a regex parser records as three.",
+      "approach": [
+        "Split the problem into a probabilistic half and a deterministic half: an LLM reads context to assign roles, then a deterministic fuzzy matcher canonicalizes each extracted name against reference master data.",
+        "Chose few-shot prompting over fine-tuning a domain NER model (spaCy/BERT) because the bottleneck was contextual role disambiguation, not pattern recognition, and no labelled corpus of sufficient size existed within the project timeline.",
+        "Schema-first prompt design: explicit field definitions for the four roles, plus 3-5 exemplars curated specifically for documents where a broker and an underwriter appear within a few words of each other.",
+        "Constrained JSON output so responses parse deterministically and a malformed generation fails loudly instead of silently corrupting downstream records.",
+        "Normalization layer: punctuation stripping, case folding, and legal-suffix truncation (Inc., LLC, GmbH) for comparison only, preserving the original string for audit.",
+        "Similarity scoring with Levenshtein distance and token-sort ratio, catching both character-level typos and reordered word forms.",
+        "Banded thresholds converting a continuous score into three explicit outcomes: at or above 85% auto-links to a canonical ID, 60-85% is flagged for human validation, and below that no match is asserted.",
+        "Synthetic evaluation benchmark generated to mirror real multi-party schedules, endorsements, and slips, avoiding any exposure of PII or PHI while giving known ground truth and controllable edge cases."
+      ],
+      "methods": [
+        "Few-shot LLM named entity recognition (Azure OpenAI)",
+        "Schema-constrained JSON generation",
+        "Fuzzy string matching (Levenshtein distance, token-sort ratio)",
+        "Entity resolution and canonical ID linkage",
+        "Synthetic annotated dataset generation",
+        "Exploratory data analysis, cleaning, standardization",
+        "Human-in-the-loop review interface"
+      ],
+      "results": [
+        { "metric": "Peak entity extraction accuracy", "value": "94.2%", "note": "On the synthetic annotated benchmark." },
+        { "metric": "Weighted F1-score", "value": "0.91", "note": "Across all four entity roles." },
+        { "metric": "Downstream parsing error reduction", "value": "approximately 15%", "note": "Measured in subsequent policy-processing steps after canonicalized output was integrated." }
+      ],
+      "key_findings": [
+        "Few-shot prompting produced its largest gains precisely where rule-based parsing failed: sentences containing both a broker and an underwriter in close proximity.",
+        "Canonicalization collapsed name variants that had previously entered the data store as separate counterparties, removing duplicate records rather than merely relabeling them.",
+        "The operational value landed downstream: normalized output cut structural parse errors in later processing by roughly 15%."
+      ],
+      "deliverables": ["Extraction and normalization pipeline", "Synthetic annotated benchmark", "Streamlit reviewer interface with upload, side-by-side inspection, and approval flags"],
+      "skills": ["Python", "Azure OpenAI", "LLMs", "few-shot prompting", "prompt engineering", "named entity recognition", "information extraction", "fuzzy matching", "Levenshtein distance", "entity resolution", "data normalization", "synthetic data generation", "exploratory data analysis", "Streamlit", "pandas", "JSON schema validation"],
+      "research_relevance": "A concrete study in where a language model should and should not be trusted: probabilistic extraction bounded by deterministic verification, with an explicit abstain band instead of a forced decision.",
+      "confidentiality": "Commercial work. Methods and the synthetic-benchmark metrics are shareable; do not reference client documents or real policy data.",
+      "talking_points": [
+        "Why banded confidence thresholds beat a single cutoff: they make abstention an explicit, auditable outcome.",
+        "Why synthetic evaluation data was the right call given PII/PHI constraints, and what it costs in external validity.",
+        "The tradeoff between few-shot prompting and fine-tuning when labelled data is the binding constraint."
+      ]
+    },
+    {
+      "id": "vedvani",
+      "title": "Undergraduate Research Intern",
+      "organization": "Department of Computer Science and Engineering, IIT Kharagpur",
+      "project_name": "Vedvani",
+      "supervisor": "Prof. Pawan Goyal",
+      "start": "2024-05",
+      "end": "2024-11",
+      "duration_months": 6,
+      "one_line": "Built an end-to-end speech-to-text system for Vedic Sanskrit, from corpus construction through HuBERT-CTC fine-tuning and language-model decoding, reaching 17.5% WER and 6.2% CER.",
+      "problem": "Vedic Sanskrit is preserved through recitation, and pitch accent is meaning-bearing. In text this appears as svara markers (udatta U+0951, anudatta U+0952, the vowel sign U+0962) alongside characters such as the sacred syllable OM and the danda. Off-the-shelf ASR systems target modern Hindi or standard Sanskrit and cannot emit these symbols at all, because a CTC model can only predict tokens present in its output layer. Stripping the markers to fit an existing vocabulary discards exactly the information a Vedic transcript exists to record. Compounding this, no usable public audio-text corpus existed for this register.",
+      "approach": [
+        "Corpus construction: scraped and consolidated verse transcripts into a single UTF-8 Devanagari corpus of roughly 30,785 verse lines, then paired recitation audio clip-by-clip with verse text into a mapping of 30,779 rows.",
+        "Splits of 24,623 train / 3,078 validation / 3,078 test, with clips over 30 seconds filtered out to bound activation memory on a single GPU; all audio decoded to mono 16 kHz.",
+        "Svara-preserving normalization: removed Latin and Devanagari digits, scraping-artifact punctuation, and redundant whitespace, while leaving every accent mark untouched.",
+        "Character-level tokenizer derived from the corpus itself (sorted unique characters plus [UNK], [PAD], and a word-delimiter), yielding a 74-token vocabulary regenerable from the text at any time. Character-level rather than word-level because Vedic vocabulary is effectively open and word units guarantee out-of-vocabulary failure.",
+        "Output vocabulary expansion: the pre-trained checkpoint inherits a 64-token output head from facebook/wav2vec2-large-xlsr-53 containing none of the accent characters. Passing vocab_size=74 with ignore_mismatched_sizes=True re-initializes the CTC classification head at the larger size while loading every pre-trained encoder weight unchanged, so the head learns the new svara symbols during fine-tuning and the acoustic representation is inherited intact.",
+        "Dataset verification: an exact-match audit re-checked every training transcript against the canonical mapping, writing a full results table and an isolated mismatch file.",
+        "Fine-tuning HubertForCTC in an explicit PyTorch training loop rather than the Hugging Face Trainer, for control over per-epoch evaluation, logging, checkpointing, and memory behaviour on a shared cluster.",
+        "Two decoding paths evaluated on the same held-out split: greedy CTC argmax, and a KenLM 4-gram language model through a pyctcdecode beam decoder wrapped in an LM-aware processor."
+      ],
+      "training_configuration": {
+        "architecture": "24 transformer layers, hidden size 1024, 16 attention heads, 7-layer convolutional feature encoder",
+        "objective": "Connectionist Temporal Classification, mean loss reduction, 74-token character vocabulary",
+        "optimizer": "AdamW, learning rate 1e-5, linear schedule with 1,500 warmup steps",
+        "batching": "12 train / 4 eval, gradient accumulation 2 (effective batch 24)",
+        "epochs": 30,
+        "precision": "FP16 autocast with gradient scaling",
+        "memory": "Gradient checkpointing, frozen convolutional feature encoder, periodic CUDA cache flush",
+        "regularization": "Attention and hidden dropout 0.1, layerdrop 0.1, SpecAugment time-mask probability 0.05",
+        "infrastructure": "Department GPU cluster (Linux, CUDA)"
+      },
+      "results": [
+        { "metric": "Word error rate", "value": "17.5%", "note": "Held-out Vedic test split, 3,074 scored clips." },
+        { "metric": "Character error rate", "value": "6.2%", "note": "Same split." },
+        { "metric": "Relative WER reduction vs. baseline", "value": "12%", "note": "Baseline reference: a Hindi XLSR model probed on Common Voice Hindi." }
+      ],
+      "key_findings": [
+        "The gap between 6.2% CER and 17.5% WER indicates the acoustic model resolves phonemes well and that most word-level errors come from a small number of characters, specifically accent marks and sandhi boundaries, rather than from wholesale mishearing.",
+        "Verification found 14,625 of 24,623 training rows (approximately 59%) disagreed with the canonical mapping. This places a hard ceiling on achievable WER and identifies alignment, not architecture, as the highest-leverage remaining problem.",
+        "Output-head resizing is the mechanism that makes Vedic transcription possible at all; without it the accent characters are structurally undecodable regardless of training."
+      ],
+      "artifacts": {
+        "repository": "https://github.com/dhruvvarshney1/sanskrit-asr-system",
+        "outputs": ["74-token corpus-derived tokenizer", "audio-text mapping and splits", "dataset verification report", "per-epoch checkpoints", "per-sample WER/CER evaluation tables"]
+      },
+      "limitations_stated_honestly": [
+        "Trained checkpoints were retained in project cloud storage rather than published.",
+        "Dependencies were unpinned and paths were cluster-absolute, so the code is not reproducible as-is on another machine.",
+        "The transcript mismatch was quantified but not resolved within the internship."
+      ],
+      "skills": ["Python", "PyTorch", "Hugging Face Transformers", "Hugging Face Datasets", "HuBERT", "Wav2Vec2", "XLS-R", "CTC", "self-supervised speech representations", "transfer learning", "speech recognition", "low-resource NLP", "Devanagari and Unicode normalization", "tokenizer construction", "KenLM", "pyctcdecode", "beam search decoding", "n-gram language modeling", "librosa", "torchaudio", "soundfile", "web scraping", "BeautifulSoup", "pandas", "mixed-precision training", "gradient checkpointing", "WER/CER evaluation"],
+      "research_relevance": "The closest thing I have to sustained research work, and the direct basis for my interest in low-resource speech. It covers the whole loop: corpus construction, script-aware normalization, architectural adaptation, and evaluation, on a language where none of it existed beforehand.",
+      "talking_points": [
+        "Why the output head had to be resized from 64 to 74 tokens, and what that implies for adapting pre-trained ASR to any script with unrepresented characters.",
+        "Why character-level CTC is the right choice for an open-vocabulary liturgical language.",
+        "What the CER-to-WER gap says about where the remaining errors actually live.",
+        "Why quantifying the 59% transcript mismatch was more valuable than quietly training through it."
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "academic-outreach-ai",
+      "title": "Academic Outreach AI",
+      "role": "Sole contributor",
+      "category": "Agentic AI / applied NLP",
+      "one_line": "An evidence-first LangGraph pipeline that turns one applicant profile into grounded, reviewable faculty outreach emails, with hallucination treated as the primary failure mode.",
+      "problem": "Cold outreach to professors fails for three reasons: students lack the hours per email to research a lab properly, generative templates invent papers and projects that destroy credibility on contact, and bulk sending risks spam-flagging and mis-targeting.",
+      "approach": [
+        "3-node LangGraph StateGraph (retrieval, drafting, human_approval) compiled with a MemorySaver checkpointer and an interrupt_before checkpoint for human review.",
+        "Retrieval fans out in parallel: homepage crawling via Trafilatura, Crawl4AI, or BeautifulSoup with a domain blocklist; the Semantic Scholar Graph API for recent papers; and a DuckDuckGo/Tavily search agent for Scholar profiles.",
+        "Collapsed retrieval and matching into a single merged LLM call returning a validated ProfileAndMatch object, reducing the pipeline from 4-8 sequential LLM calls to 2 per email.",
+        "Zero-hallucination prompt discipline: explicit instructions to use only information present in the retrieved context, negative examples against filler phrasing, and an empty ProfileAndMatch returned on empty context rather than a fabricated one.",
+        "A unified LLMManager wrapping an OpenAI-compatible endpoint (NVIDIA NIM or local Ollama) behind a Pydantic-validated structured-extraction contract, guarded by a process-level circuit breaker.",
+        "Content-aware SQLite/aiosqlite cache with configurable TTL so repeat runs are deterministic and avoid redundant paid calls.",
+        "Gmail API sender with OAuth refresh, MIME/base64url encoding, UTF-8 preservation, and CR/LF header-injection sanitization, gated behind a send_enabled kill-switch."
+      ],
+      "results": [
+        { "metric": "LLM calls per email", "value": "2", "note": "Reduced from 4-8 through the graph topology refactor." },
+        { "metric": "Target latency", "value": "under approximately 25 seconds per professor", "note": "With bounded concurrency of 3 in-flight drafts." }
+      ],
+      "tech": ["Python 3.11+", "LangGraph", "LangChain", "Pydantic v2", "SQLAlchemy 2.x async", "aiosqlite", "Streamlit", "Gmail API", "httpx", "trafilatura", "BeautifulSoup4", "crawl4ai", "Semantic Scholar Graph API", "NVIDIA NIM", "Ollama", "loguru", "mypy", "ruff", "pytest"],
+      "skills": ["agentic orchestration", "retrieval-augmented generation", "structured LLM output validation", "circuit breaker and retry design", "async I/O", "caching strategy", "human-in-the-loop design", "prompt engineering with negative constraints"],
+      "research_relevance": "A working study in constraining generative models to verifiable evidence. The design question, how to make a model abstain rather than invent, is the same one that shows up in scientific and clinical NLP.",
+      "note": "This system is what consumes the present file as its applicant profile."
+    },
+    {
+      "id": "agentic-inventory-poc",
+      "title": "Agentic Inventory-Replenishment POC",
+      "role": "Sole contributor",
+      "category": "Agentic systems / supply chain",
+      "one_line": "A deterministic six-agent LangGraph pipeline that turns a stock breach into the correct purchasing action, with the language model structurally excluded from every decision path.",
+      "problem": "A demand planner at an automotive-parts distributor must scan hundreds of SKUs each morning and decide who to buy from, what quantity to order, and which orders require human approval. The work is high-volume, policy-driven, and audit-bound, which makes it a poor fit for an unconstrained LLM agent.",
+      "approach": [
+        "Six-agent LangGraph state graph: stock_monitor, demand_forecast, vendor_checker, approval, then a three-way fork to po_generator, human_approval, or notification.",
+        "Three-way autonomy fork (AUTO-ISSUE, DRAFT-FOR-APPROVAL, SUPPRESS) with a real LangGraph interrupt pause on the draft path, so a draft physically cannot reach the purchase-order node without an explicit human resume command.",
+        "The LLM is restricted to two human-facing text edges only, the draft justification narrative and the notification body, behind a Gemini to Ollama to deterministic-template fallback chain that never raises. Detection, forecasting, and routing are deterministic Python.",
+        "Append-only audit log enforced at the database level via SQLite triggers that abort UPDATE and DELETE, with a single append_audit writer chokepoint.",
+        "Structural write guardrail: one _write_allowed check plus required-field validation refuses any purchase order missing vendor, quantity, or approver.",
+        "Vendor-consolidated batch purchase orders collapsing N per-SKU orders into one order per shared approved vendor, with supplier eligibility and minimum-order-quantity gating.",
+        "Demand sizing applying promotional and seasonal uplifts multiplicatively over a weekly baseline, ceil-rounded to pack size.",
+        "Byte-stable determinism from a fixed random seed and reference date, so all routing decisions reproduce identically on any machine."
+      ],
+      "results": [
+        { "metric": "Test suite", "value": "18 pytest cases across guardrails, audit, HITL, and graph suites, all passing" },
+        { "metric": "Acceptance gate", "value": "17-check phase-4 validator, passing" },
+        { "metric": "Canonical scenarios", "value": "4 (auto-issue, draft-pause, batch consolidation, suppress), reproducing byte-stable from a fixed seed" },
+        { "metric": "Offline operation", "value": "Full demo runs with USE_LLM=false" }
+      ],
+      "tech": ["Python 3.11", "LangGraph", "Pydantic v2", "SQLAlchemy 2.0", "SQLite", "Streamlit", "Gemini 2.5 Flash", "Ollama", "pandas", "NumPy", "statsmodels", "pytest", "python-dotenv"],
+      "skills": ["multi-agent orchestration", "state machine design", "human-in-the-loop gating", "audit and governance design", "database-level integrity constraints", "deterministic system design", "test and acceptance engineering"],
+      "research_relevance": "An argument, in code, that reliable agentic systems come from restricting the model's authority rather than improving its prompts. The autonomy tiers and the structural write guard are the interesting part, not the LLM."
+    },
+    {
+      "id": "dunnhumby-forecasting",
+      "title": "Dunnhumby Retail Demand Forecasting",
+      "role": "Sole contributor",
+      "category": "Forecasting / MLOps",
+      "one_line": "A leakage-safe product-week demand forecasting pipeline on the Dunnhumby Complete Journey dataset, benchmarking gradient boosting against hierarchical Bayesian and frequentist baselines.",
+      "problem": "Predicting weekly organic sales at the product-week level after filtering promotional and discount-driven noise, on intermittent retail demand where most series are sparse and zero-inflated.",
+      "approach": [
+        "Engineered a dense product-week panel from 458,530 observations, parsing size and category metadata and aligning categorical levels.",
+        "Feature set combining trend, Fourier seasonality, lag features, rolling statistics, percent-change signals, and store/basket exposure indicators.",
+        "Chronological splitting throughout to prevent temporal leakage.",
+        "Benchmarked model families empirically: MixedLM and PyMC hierarchical baselines against CatBoost with Poisson and Tweedie objectives, chosen for count-valued, zero-inflated targets.",
+        "Documented a Databricks production architecture using Spark, Delta Lake, Pandas UDF inference, DBFS/Unity Catalog, and Workflows for distributed ETL and batch scoring."
+      ],
+      "results": [
+        { "metric": "WAPE", "value": "1.83%", "note": "Best recorded test run, CatBoost." },
+        { "metric": "SMAPE", "value": "2.28%", "note": "Same run." },
+        { "metric": "R-squared", "value": "0.996", "note": "Same run." },
+        { "metric": "RMSE", "value": "0.372", "note": "Same run." },
+        { "metric": "MAE", "value": "0.047", "note": "Same run." }
+      ],
+      "caveat": "These are public-dataset results under a chronological split, not production figures. The Databricks path is documented and designed rather than fully wired end to end.",
+      "tech": ["Python", "SQL", "pandas", "NumPy", "scikit-learn", "CatBoost", "Optuna", "SHAP", "statsmodels", "PyMC", "PyTensor", "PyTorch", "PySpark", "Spark SQL", "Delta Lake", "Pandas UDFs", "MLflow", "Databricks", "matplotlib", "seaborn"],
+      "skills": ["time-series feature engineering", "leakage prevention", "intermittent demand modeling", "Poisson and Tweedie objective selection", "hierarchical modeling (frequentist and Bayesian)", "hyperparameter tuning", "distributed ETL design", "experiment tracking", "model interpretation via SHAP and feature importance"],
+      "research_relevance": "Where I learned that objective-function choice for count data, and honest temporal validation, matter more than model capacity."
+    },
+    {
+      "id": "ml-pipeline",
+      "title": "Classical ML Pipeline Framework",
+      "role": "Sole contributor",
+      "category": "ML engineering",
+      "one_line": "A configuration-driven, leakage-safe framework implementing the full classical ML workflow on tabular data, from raw CSV ingestion to packaged artifacts and reports.",
+      "problem": "Repeated tabular experiments kept reintroducing the same two failure modes: data leakage from transforms fitted before splitting, and unreproducible results from unseeded, undocumented runs.",
+      "approach": [
+        "Ten-stage modular pipeline sharing a single Config object, so each stage is isolated but consistently parameterized.",
+        "Leakage-safe preprocessing that fits imputation, outlier capping, scaling, and encoding on the training split only, then reapplies them to test and submission data.",
+        "Dynamic feature engineering including log1p, Box-Cox, and Yeo-Johnson skew correction, spline generation, and variance-correlation filtering.",
+        "Model registry across scikit-learn and optional XGBoost estimators, with grid and randomized search under k-fold cross-validation.",
+        "Automated reporting: markdown run reports, JSON run summaries, confusion matrices, ROC-AUC summaries, feature-importance and residual diagnostic plots.",
+        "Reproducibility discipline: global seeding, deterministic joblib executors, rotating file logging, and artifact versioning."
+      ],
+      "results": [
+        { "metric": "End-to-end runtime", "value": "approximately 30% reduction", "note": "Versus the pre-refactor workflow." },
+        { "metric": "Cross-validated F1", "value": "0.74", "note": "Gradient-boosted model, health-condition classification task." },
+        { "metric": "ROC-AUC", "value": "0.93", "note": "Same task and model." },
+        { "metric": "MAE improvement from dynamic feature engineering", "value": "approximately 12%", "note": "Versus baseline preprocessing." }
+      ],
+      "tech": ["Python 3.12", "scikit-learn", "XGBoost", "pandas", "NumPy", "joblib", "matplotlib", "seaborn", "YAML", "dataclasses"],
+      "skills": ["pipeline architecture", "leakage-safe data handling", "hyperparameter optimization", "model registry design", "automated reporting", "reproducibility engineering", "MLOps artifact management"],
+      "research_relevance": "The infrastructure habit behind everything else here: if a result cannot be regenerated from a config file and a seed, it is not a result yet."
+    },
+    {
+      "id": "dhruvgpt",
+      "title": "DhruvGPT",
+      "role": "Sole contributor",
+      "category": "Full-stack AI application",
+      "one_line": "An asynchronous FastAPI chat backend that streams hosted LLM responses over Server-Sent Events with persistent PostgreSQL conversation history.",
+      "problem": "Building a browser-based LLM interface surfaces a set of concrete engineering problems: keeping provider credentials server-side, streaming output incrementally rather than blocking on full responses, persisting history across sessions, and degrading gracefully under provider failures, timeouts, rate limits, and cancellation.",
+      "approach": [
+        "Async FastAPI service converting provider streaming chunks into browser-consumable SSE events (conversation_id, reasoning, token, done, error).",
+        "Async SQLAlchemy over PostgreSQL with UUID primary keys, role constraints, cascading deletes, and indexes on updated_at and conversation_id; Alembic migrations.",
+        "Resilient provider client on httpx.AsyncClient: three-attempt retries with exponential backoff for connection errors and 5xx, immediate failure for most 4xx, dedicated 429 and timeout exceptions, and malformed SSE chunk skipping.",
+        "Partial assistant output preserved when a browser request is cancelled mid-stream.",
+        "Reasoning-token support with a configurable thinking budget, separated from final answer content.",
+        "Vanilla JavaScript frontend with manual SSE frame parsing, AbortController cancellation, requestAnimationFrame render batching, Markdown rendering, syntax highlighting, and DOMPurify sanitization of model output.",
+        "Containerized with Docker on Render, running migrations at container startup; static frontend deployed via GitHub Actions to GitHub Pages."
+      ],
+      "tech": ["Python 3.12", "FastAPI", "Uvicorn", "async SQLAlchemy", "asyncpg", "PostgreSQL", "Alembic", "Pydantic v2", "httpx", "NVIDIA hosted inference API", "vanilla JavaScript", "HTML5", "CSS3", "Docker", "Render", "GitHub Actions", "GitHub Pages"],
+      "skills": ["asynchronous backend engineering", "streaming protocol design", "database schema and migration design", "provider failure handling", "XSS-safe rendering of untrusted model output", "containerized deployment"],
+      "known_gaps": "No authentication or per-user isolation, no pagination, no application-level rate limiting, and no automated test suite. These are stated in the project's own documentation rather than glossed over.",
+      "research_relevance": "Peripheral to research interests, but it is the reason I can build and host the tooling a research project needs without waiting on someone else."
+    },
+    {
+      "id": "evacuation",
+      "title": "Real-Time AI Emergency Evacuation System",
+      "role": "Sole contributor",
+      "category": "Computer vision / real-time systems",
+      "one_line": "A live vision system that detects people and hazards from a camera feed, maps them onto a floor plan, and regenerates safe evacuation routes in real time.",
+      "problem": "Evacuation routing is usually static, computed once at building design time, and therefore wrong exactly when a hazard blocks the planned path.",
+      "approach": [
+        "YOLOv11 for human detection and HSV-based hazard simulation to identify unsafe regions from the live feed.",
+        "Homography mapping from 3D camera coordinates onto a 2D floor plan, so detections become spatially accurate positions on a map.",
+        "A* pathfinding over the mapped floor plan, regenerating routes as hazards move.",
+        "Optimized with OpenCV and NumPy for sustained real-time throughput."
+      ],
+      "results": [
+        { "metric": "Processing rate", "value": "30 FPS" },
+        { "metric": "Route regeneration latency", "value": "under 50 ms" }
+      ],
+      "tech": ["Python", "YOLOv11", "OpenCV", "NumPy", "A* search"],
+      "skills": ["object detection", "camera geometry and homography", "pathfinding", "real-time optimization"]
+    },
+    {
+      "id": "stock-market",
+      "title": "Stock Market Prediction and Trading Simulator",
+      "role": "Sole contributor",
+      "category": "Quantitative ML",
+      "one_line": "A research workflow on NSE data combining engineered market features, tree-based prediction, order-book signals, and a backtesting and trading simulator.",
+      "problem": "Predictive accuracy on price series is easy to overstate; the harder question is whether a signal survives realistic execution and evaluation.",
+      "approach": [
+        "Feature engineering over NSE market data, including market microstructure and order-book behaviour.",
+        "Comparison of Random Forest, XGBoost, CatBoost, and LightGBM predictors.",
+        "Backtesting and trading simulation to evaluate signals under realistic conditions rather than on in-sample accuracy.",
+        "Simulator structured for future reinforcement-learning experiments."
+      ],
+      "tech": ["Python", "pandas", "NumPy", "scikit-learn", "Random Forest", "XGBoost", "CatBoost", "LightGBM"],
+      "skills": ["financial feature engineering", "backtesting design", "market microstructure", "model comparison"],
+      "status": "Ongoing research project; no performance claims are made for the trading strategy."
+    },
+    {
+      "id": "pokerbots",
+      "title": "Jane Street Pokerbots",
+      "role": "Competitor",
+      "category": "Game theory / competitive AI",
+      "one_line": "A poker bot using Monte Carlo hand-strength estimation and expected-value-based auction bidding under uncertainty.",
+      "approach": [
+        "Monte Carlo simulation for hand-equity estimation within the competition's time budget.",
+        "Expected-value-based bidding for the auction mechanic.",
+        "Game-theoretic reasoning about decision-making under incomplete information."
+      ],
+      "results": [{ "metric": "Peak competition rank", "value": "#30" }],
+      "tech": ["Python", "Monte Carlo methods", "game theory"],
+      "skills": ["decision making under uncertainty", "simulation", "performance optimization under time constraints"]
+    },
+    {
+      "id": "house-prices",
+      "title": "Prediction of House Prices",
+      "role": "Competitor",
+      "category": "Kaggle / regression",
+      "one_line": "A feature-rich regression workflow expanding 79 raw variables into over 200 engineered features with Bayesian-optimized gradient boosting.",
+      "approach": [
+        "Engineered 200+ features through imputation, encoding, and transformation strategies.",
+        "Built and compared six regression models including Random Forest, Gradient Boosting, and XGBoost.",
+        "Tuned with Bayesian optimization rather than grid search."
+      ],
+      "results": [
+        { "metric": "R-squared", "value": "90%" },
+        { "metric": "RMSE", "value": "25,450" },
+        { "metric": "Kaggle leaderboard rank", "value": "2,111" }
+      ],
+      "tech": ["Python", "pandas", "scikit-learn", "XGBoost", "scikit-optimize"]
+    },
+    {
+      "id": "spaceship-titanic",
+      "title": "Spaceship Titanic",
+      "role": "Competitor",
+      "category": "Kaggle / classification",
+      "one_line": "A full classification pipeline covering cabin parsing, amenity aggregation, missing-value handling, and calibrated probability outputs.",
+      "approach": [
+        "Feature creation including cabin string parsing and amenity spend aggregation.",
+        "Benchmarked Random Forest, SVM, and Naive Bayes with GridSearchCV.",
+        "Generated calibrated probability outputs for submission."
+      ],
+      "results": [
+        { "metric": "Public leaderboard score", "value": "0.75403" },
+        { "metric": "Kaggle rank", "value": "1,582" }
+      ],
+      "tech": ["Python", "pandas", "scikit-learn"]
+    },
+    {
+      "id": "titanic",
+      "title": "Titanic Survival Prediction",
+      "role": "Competitor",
+      "category": "Kaggle / classification",
+      "one_line": "An interpretable survival-prediction workflow over 891 training samples with aligned preprocessing and tuned XGBoost.",
+      "approach": [
+        "Exploratory analysis of survival patterns across demographic and ticket-class features.",
+        "Preprocessing pipeline with imputation, one-hot encoding, and train/test feature alignment.",
+        "Tuned XGBoost classifier."
+      ],
+      "results": [
+        { "metric": "ROC-AUC", "value": "0.82 to 0.88" },
+        { "metric": "Leaderboard accuracy", "value": "0.77511" },
+        { "metric": "Kaggle rank", "value": "3,916" }
+      ],
+      "tech": ["Python", "pandas", "scikit-learn", "XGBoost"]
+    },
+    {
+      "id": "image-filtering",
+      "title": "Image Filtering Web App",
+      "role": "Sole contributor",
+      "category": "Computer vision / web",
+      "one_line": "A Flask and OpenCV service applying image transforms on demand with live browser previews via the Fetch API.",
+      "approach": [
+        "Flask backend with RESTful routes returning processed images on demand.",
+        "Real-time previews through the Fetch API.",
+        "Caching of repeated transformations to improve runtime efficiency."
+      ],
+      "tech": ["Python", "Flask", "OpenCV", "JavaScript", "HTML/CSS"]
+    },
+    {
+      "id": "cloud-kitchen",
+      "title": "Homecoming Cloud Kitchen Website",
+      "role": "Sole contributor",
+      "category": "Web development",
+      "one_line": "A responsive static ordering site with modular components, availability states, dynamic pricing, and validated order payload assembly.",
+      "approach": [
+        "Modular component structure with a menu system and availability states.",
+        "Dynamic pricing and subtotal logic with form validation.",
+        "Structured for future API integration; deployed on GitHub Pages."
+      ],
+      "tech": ["HTML", "CSS", "JavaScript", "GitHub Pages"]
+    },
+    {
+      "id": "sudoku",
+      "title": "Sudoku Solver",
+      "role": "Sole contributor",
+      "category": "C++ / interactive graphics",
+      "one_line": "An interactive SFML solver that visualizes recursive backtracking step by step, including conflicts and hints.",
+      "approach": [
+        "Backtracking solver with visualized intermediate states.",
+        "Conflict highlighting and hint generation.",
+        "Event-driven UI logic in C++ with SFML."
+      ],
+      "tech": ["C++", "SFML"],
+      "skills": ["recursion", "search pruning", "event-driven graphics"]
+    }
+  ],
+
+  "skills": {
+    "programming_languages": ["Python", "C", "C++", "SQL", "JavaScript", "HTML", "CSS", "Bash"],
+    "machine_learning": ["scikit-learn", "XGBoost", "LightGBM", "CatBoost", "PyTorch", "TensorFlow", "Optuna", "SHAP", "statsmodels", "PyMC", "hierarchical modeling", "uplift modeling", "time-series forecasting", "reinforcement learning (introductory)"],
+    "speech_and_nlp": ["Hugging Face Transformers", "Hugging Face Datasets", "HuBERT", "Wav2Vec2", "XLS-R", "CTC", "KenLM", "pyctcdecode", "beam search decoding", "n-gram language modeling", "librosa", "torchaudio", "soundfile", "spaCy", "named entity recognition", "information extraction", "Unicode and Devanagari normalization", "tokenizer construction"],
+    "llm_and_agentic": ["LangGraph", "LangChain", "Azure OpenAI", "NVIDIA NIM", "Gemini", "Ollama", "prompt engineering", "few-shot prompting", "structured JSON extraction", "retrieval-augmented generation", "human-in-the-loop design", "circuit breaker and fallback chains"],
+    "computer_vision": ["OpenCV", "YOLOv11", "homography and camera geometry", "real-time video processing"],
+    "data_engineering": ["pandas", "NumPy", "PySpark", "Spark SQL", "Delta Lake", "Databricks", "MLflow", "SQLAlchemy", "PostgreSQL", "SQLite", "Alembic", "BeautifulSoup", "web scraping", "ETL design"],
+    "web_and_systems": ["FastAPI", "Flask", "Streamlit", "REST APIs", "Server-Sent Events", "async I/O", "Docker", "GitHub Actions", "Render", "GitHub Pages"],
+    "engineering_practice": ["Git", "pytest", "mypy", "ruff", "reproducible seeding", "structured logging", "experiment tracking", "leakage-safe validation design", "mixed-precision and memory-constrained GPU training"],
+    "tools": ["Jupyter", "VS Code", "Linux GPU clusters (CUDA)"]
+  },
+
+  "achievements": [
+    { "item": "JEE Advanced 2023", "detail": "Top 6.4% nationally" },
+    { "item": "JEE Main 2023", "detail": "Top 1.9%" },
+    { "item": "WBJEE", "detail": "Top approximately 1% among 100,000+ candidates" },
+    { "item": "Open IIT Data Analytics Competition 2024", "detail": "4th place" },
+    { "item": "Jane Street Pokerbots", "detail": "Peak rank #30" },
+    { "item": "Kaggle", "detail": "Ranks 2,111 (House Prices), 1,582 (Spaceship Titanic), 3,916 (Titanic Survival)" },
+    { "item": "Competitive programming", "detail": "Codeforces peak rating 1200+; 150+ LeetCode problems solved" }
+  ],
+
+  "additional_training": [
+    "Machine Learning Specialization (Andrew Ng)",
+    "Hugging Face Audio Course",
+    "Striver A2Z DSA Course",
+    "MATLAB Onramp"
+  ],
+
+  "leadership_and_activities": [
+    "Led the design and content team at Click KGP, coordinating event photography and post-production workflow for campus initiatives."
+  ],
+
+  "publications": [],
+
+  "references": [
+    {
+      "name": "Prof. Pawan Goyal",
+      "affiliation": "Department of Computer Science and Engineering, IIT Kharagpur",
+      "relationship": "Research supervisor, Vedvani Sanskrit ASR internship, May to November 2024",
+      "contact": null,
+      "note": "Permission to list as a referee should be confirmed before including contact details in any email."
+    }
+  ],
+
+  "email_kit": {
+    "one_sentence_intro": "I am a final-year B.S. (Hons.) student at IIT Kharagpur in Exploration Geophysics with a Computer Science minor, working on speech and language technology for low-resource languages.",
+    "elevator_pitch_speech": "During a six-month research internship under Prof. Pawan Goyal at IIT Kharagpur, I built an end-to-end speech-to-text system for Vedic Sanskrit: I constructed the audio-text corpus from scratch, designed a svara-preserving normalization scheme and a corpus-derived 74-token character tokenizer, resized a pre-trained HuBERT model's CTC head so the Vedic accent characters were representable at all, and evaluated the result with both greedy and KenLM 4-gram decoding, reaching 17.5% WER and 6.2% CER.",
+    "elevator_pitch_nlp_extraction": "At Xceedance I built an insurance document understanding pipeline that pairs few-shot LLM extraction with deterministic fuzzy matching against reference master data, reaching 94.2% peak accuracy and 0.91 weighted F1 while cutting downstream parsing errors by about 15%. The part I found most interesting was designing explicit confidence bands so the system abstains and routes to a human instead of forcing an uncertain match.",
+    "elevator_pitch_systems": "I build machine learning systems that run end to end and are honest about their own limits, whether that is quantifying a 59% transcript mismatch in my own training data or restricting a language model to the two text edges of an otherwise deterministic pipeline.",
+    "quotable_metrics": [
+      "17.5% WER and 6.2% CER on Vedic Sanskrit ASR, a 12% relative WER reduction over baseline",
+      "94.2% peak extraction accuracy and 0.91 weighted F1 on insurance entity extraction, with about 15% fewer downstream parsing errors",
+      "Constructed a Vedic Sanskrit corpus of roughly 30,785 verse lines with aligned audio across 30,779 mapped clips",
+      "WAPE 1.83% and R-squared 0.996 on Dunnhumby product-week demand forecasting under a chronological split",
+      "Peak rank #30 in the Jane Street Pokerbots competition",
+      "CGPA 8.41 out of 10 at IIT Kharagpur"
+    ],
+    "why_this_lab_hooks": {
+      "speech_asr": "My Vedic Sanskrit work ran into the exact problem your group works on: adapting self-supervised speech models to scripts and phonologies the pre-trained vocabulary cannot represent.",
+      "low_resource_nlp": "I have built a dataset from nothing for a language with no public corpus, so I am familiar with how much of low-resource NLP is actually corpus construction and alignment.",
+      "trustworthy_ai": "Both my industry internship and my agentic projects were about bounding what a generative model is allowed to decide, which is the design question I would like to study properly.",
+      "forecasting_causal": "My current internship is on baseline-versus-promotional decomposition and uplift estimation, where the validation design determines whether the estimate means anything.",
+      "geophysics_ml": "My degree is in exploration geophysics, so I am comfortable with inverse problems and with inference from sparse, expensive, noisy physical measurements."
+    },
+    "closing_lines": [
+      "I would be glad to send my transcript, CV, or the code and evaluation reports for any of the work above.",
+      "If you are taking Master's students for the coming intake, I would very much like to be considered, and I am happy to discuss any of this in more detail."
+    ]
+  },
+
+  "constraints": {
+    "do_not_claim": [
+      "Any peer-reviewed publication, preprint, or conference presentation. There are none.",
+      "Co-authorship on Prof. Goyal's papers, or any formal research group membership beyond the stated internship.",
+      "That Vedvani model checkpoints are publicly available. They are not; only the code is.",
+      "Any Polestar Analytics client name, dataset, or internal performance figure. The internship is commercial and ongoing.",
+      "Any Xceedance client, real policy document, or production dataset. Reported metrics come from a synthetic benchmark, and that should be stated when the numbers are used.",
+      "That the Dunnhumby figures are production results. They are public-dataset results under a chronological split.",
+      "Trading performance or profitability for the stock market project. None was measured.",
+      "Fluency, coursework, awards, or tooling experience not listed in this file."
+    ],
+    "tone_guidance": [
+      "State results with their evaluation setting attached. A number without its split is not a claim worth making.",
+      "Avoid superlatives such as 'groundbreaking', 'perfect fit', or 'passionate about'. Say what was built and what it measured.",
+      "Where a project has known gaps, it is better to name one than to imply completeness. The limitations listed here are usable in conversation, not liabilities.",
+      "Keep outreach emails to roughly 170 to 250 words. Pick one project that matches the professor's work rather than summarizing everything."
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+Polestar Analytics
+Created 3 projects - 
+Machine Learning Pipeline - Learnt about statistical relationships in linear models and python modules like - statsmodels.api
+Uplift Modelling 
+    - First trained a model to predict baseline sales (sales without any promotional campaign)
+    - Second trained a model to predict the promotional sales of the retail store
+    - Modelling was done using hierachical modelling and the model used was catboost although other hierachical models were also used such as pymc etc.
+    - Sql was used to create the databases so that multiple tables could be used together
+    
