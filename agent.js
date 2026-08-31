@@ -8,7 +8,7 @@
 (function () {
     const PROXY_ENDPOINT = '/api/chat';
     const NVIDIA_API_KEY = ''; // Optional: only used if calling NVIDIA directly without a proxy
-    const MODEL = 'meta/llama-3.1-8b-instruct';
+    const MODEL = 'openai/gpt-oss-20b';
     const DIRECT_ENDPOINT = 'https://integrate.api.nvidia.com/v1/chat/completions';
 
     const PERSONA = `You are the built-in terminal agent on Dhruv Varshney's portfolio site (dhruvvarshney1.github.io/resume).
