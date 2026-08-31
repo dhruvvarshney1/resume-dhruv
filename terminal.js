@@ -29,10 +29,12 @@ Type <span class="highlight">'help'</span> for available commands.`;
   <span class="highlight">achievements</span> - Ranks and results
   <span class="highlight">contact</span>      - How to reach me
   <span class="highlight">open</span> &lt;page&gt;  - Jump to a project / experience page
+  <span class="highlight">ask</span> &lt;query&gt;  - Chat with the AI agent (resume + anything else)
   <span class="highlight">clear</span>        - Clear the output
   <span class="highlight">close</span>        - Close this terminal (Esc)
 
-<span class="dim">Tab completes commands and page names. ↑/↓ walks history.</span>`;
+<span class="dim">Tab completes commands and page names. ↑/↓ walks history.
+Anything that isn't a command goes straight to the agent.</span>`;
 
     // slug -> page. `open` targets; also drives tab-completion.
     const pages = {
@@ -222,11 +224,39 @@ Speech Recognition, Quantitative Finance`,
         out.scrollTop = out.scrollHeight;
     }
 
+    function escapeHtml(s) {
+        return s.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+    }
+
+    // Free text -> LLM agent (agent.js). Plain text back, escaped before render.
+    function askAgent(question) {
+        if (!question) {
+            print(`Usage: <span class="highlight">ask &lt;question&gt;</span> — e.g. <span class="dim">ask what stack does he use for ML?</span>`, 'output-box');
+            return;
+        }
+        if (!window.TerminalAgent) {
+            print(`agent offline — <span class="dim">agent.js not loaded</span>. Type <span class="highlight">'help'</span> for built-in commands.`, 'output-box');
+            return;
+        }
+        const typing = document.createElement('div');
+        typing.className = 'output-box thinking';
+        typing.innerHTML = '<span class="dim">agent: thinking…</span>';
+        out.appendChild(typing);
+        out.scrollTop = out.scrollHeight;
+        window.TerminalAgent.ask(question)
+            .then(reply => {
+                typing.className = 'output-box agent-msg';
+                typing.innerHTML = escapeHtml(reply).replace(/\n/g, '<br>');
+            })
+            .catch(() => { typing.innerHTML = 'agent: network error — check your connection and try again.'; })
+            .finally(() => { out.scrollTop = out.scrollHeight; });
+    }
+
     // Candidates for the word being typed: page slugs after `open `, else commands.
     function candidates(value) {
         const openArg = /^\s*open\s+(\S*)$/.exec(value);
         const word = openArg ? openArg[1] : value.trimStart();
-        const pool = openArg ? Object.keys(pages) : Object.keys(commands).concat('open', 'clear', 'close');
+        const pool = openArg ? Object.keys(pages) : Object.keys(commands).concat('open', 'ask', 'clear', 'close');
         return { word, prefix: value.slice(0, value.length - word.length), hits: pool.filter(c => c.startsWith(word)) };
     }
 
@@ -252,9 +282,10 @@ Speech Recognition, Quantitative Finance`,
         }
         if (e.key !== 'Enter') return;
 
-        const cmd = input.value.trim().toLowerCase();
+        const raw = input.value.trim();
+        const cmd = raw.toLowerCase();
         input.value = '';
-        print(`<span class="prompt"><span class="user">guest@dhruv</span>:<span class="dir">~</span>$</span> ${cmd}`, 'cmd-echo');
+        print(`<span class="prompt"><span class="user">guest@dhruv</span>:<span class="dir">~</span>$</span> ${escapeHtml(raw)}`, 'cmd-echo');
         if (!cmd) return;
         history.push(cmd);
         histIndex = history.length;
@@ -274,6 +305,10 @@ Speech Recognition, Quantitative Finance`,
             return;
         }
 
-        print(commands[cmd] || `bash: ${cmd}: command not found — type <span class="highlight">'help'</span> for a list.`, 'output-box');
+        if (commands[cmd]) { print(commands[cmd], 'output-box'); return; }
+
+        // Unknown input: `ask <question>` or any plain text -> the agent.
+        const question = cmd === 'ask' ? '' : (cmd.startsWith('ask ') ? raw.slice(4).trim() : raw);
+        askAgent(question);
     });
 })();

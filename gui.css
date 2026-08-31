@@ -776,6 +776,11 @@ body.terminal-open #terminal-backdrop { opacity: 1; visibility: visible; }
 #terminal-panel .highlight { color: #fd971f; font-weight: 700; }
 #terminal-panel .accent { color: #e6db74; }
 #terminal-panel .dim { color: #75715e; }
+/* Agent (agent.js): replies get a soft left rule; the thinking line blinks. */
+#terminal-panel .agent-msg { border-left: 2px solid #66d9ef; padding-left: 10px; color: #c3d2e0; }
+#terminal-panel .thinking { animation: term-blink 1.1s ease-in-out infinite; }
+@keyframes term-blink { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { #terminal-panel .thinking { animation: none; } }
 #term-output::-webkit-scrollbar { width: 8px; }
 #term-output::-webkit-scrollbar-thumb { background: #3e3d32; border-radius: 4px; }
 @media (max-width: 600px) { #terminal-panel { font-size: 13px; } #terminal-panel .ascii-art { font-size: 8px; } }

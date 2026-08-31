@@ -9,9 +9,13 @@ A personal portfolio site for Dhruv Varshney (IIT Kharagpur, B.S. Exploration Ge
 ## Entry points
 
 - `index.html` — **default landing page**: the GUI portfolio (Debbie Chen minimalist aesthetic). Loads `gui.css`. Sections: hero, work, projects, about, contact. Nav anchors to those sections; smooth-scroll handled by an inline script at the bottom of the page.
-- `_archive/` — preserved-but-archived assets: previous terminal experience (`terminal.html`, `terminal.css`, `terminal.js`) and three tabular CV variants (`sde_cv.html`, `core.html`, `data.html`) plus their shared stylesheet (`style.css`). Not linked from `index.html`; reachable directly by URL. Treat them as read-only history.
+- `terminal.js` — **live terminal drawer**: self-injects a nav toggle + slide-in panel on every page that loads it (all pages do). Canned commands (`about`, `experience`, `projects`, …), `open <page>` navigation, Tab completion, history. Styles live in `gui.css` (search "Terminal sidebar").
+- `agent.js` — **LLM chat agent for the terminal**, loaded right before `terminal.js` on every page. Exposes `window.TerminalAgent.ask(q)`; grounds resume answers in `resume.json` (fetched once) and answers general questions too. Talks to the NVIDIA NIM API with a key stored in the `NVIDIA_API_KEY` constant (visible in source by design — use a free-tier, rate-limited key). `terminal.js` routes `ask <q>` and any unknown input to it.
+- `detail.js` / `project-*.html` / `experience-*.html` / `skills.html` — detail pages: minified single-line shells whose content is rendered by `detail.js` (and `skills-network.js` for the skills graph) based on `data-detail`. If you change the script tag list in one of these shells, change it in all of them.
+- `_archive/` — preserved-but-archived assets (`terminal.html`, tabular CV variants, `style.css`). Not linked from `index.html`; reachable directly by URL. Treat them as read-only history.
 
 Auxiliary files:
+- `resume.json` — structured source-of-truth; also the agent's knowledge base. Keep it in sync when facts change.
 - `resume.txt` — plain-text narrative (source-of-truth for the long-form bio).
 - `Internships/` — PDF versions of CVs/offers (binary, not edited by Claude).
 
@@ -24,12 +28,12 @@ There is **no package.json, no build, no test runner, no linter**. Lint/format w
 
 ## Architecture in one paragraph
 
-`index.html` is static markup styled by `gui.css`. There is no JS framework — just a small inline script at the bottom for nav-scroll state and smooth-scroll anchors. There is no shared data layer; the GUI lives entirely in `index.html` and `gui.css`. If you change a project description, edit it in `index.html` (the project card) and propagate to `resume.txt` manually if you want it reflected in the plain-text version.
+`index.html` is static markup styled by `gui.css`. There is no JS framework — an inline script handles nav-scroll/smooth-scroll, and `project-cards.js`/`profile.js` handle small GUI behaviors. `terminal.js` + `agent.js` add the site-wide chat drawer. There is no shared data layer; if you change a project description, edit it in `index.html` (the project card) and propagate to `resume.json`/`resume.txt` manually.
 
 ## Conventions worth knowing before editing
 
 - **GUI styling is the Debbie Chen style** — light background, Inter + Playfair Display, large serif headings, zinc palette, hover-italic on titles, generous whitespace. Match it; don't drift toward something denser.
-- **ASCII banner / terminal colors** in `_archive/terminal.js` (`highlight` orange, `accent` yellow, `dim` gray) only apply if you ever revive the archived terminal — leave them alone otherwise.
+- **Terminal colors** in `terminal.js` (`highlight` orange, `accent` yellow, `dim` gray, Monokai-palette ASCII banner) are the live terminal's palette — reuse them for anything new inside the drawer.
 - **Tabular CV styling** (`_archive/style.css`) is reserved for the archived CV pages. Don't pull it back into `index.html`.
 
 ## Things to NOT do
