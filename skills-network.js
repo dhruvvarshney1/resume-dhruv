@@ -54,7 +54,7 @@
     node.classed('is-dimmed', d => !connected.has(d.id)); link.classed('is-active', d => d.source.id === selected.id || d.target.id === selected.id).classed('is-dimmed', d => d.source.id !== selected.id && d.target.id !== selected.id);
     title.textContent = selected.name; description.textContent = `${selected.name} appears across ${selected.count} portfolio item${selected.count === 1 ? '' : 's'}. Connections are weighted by co-occurrence.`;
     meta.innerHTML = `<p class="skill-frequency">${selected.count} occurrence${selected.count === 1 ? '' : 's'} · ${adjacency.get(selected.id).size} connections</p>`;
-    related.innerHTML = `<p class="eyebrow">Appears in</p><ul>${selected.records.map(record => `<li><a href="${record.type === 'Experience' ? `experience-${record.id}.html` : `project-${record.id}.html`}">${record.title}</a></li>`).join('')}</ul>`;
+    related.innerHTML = `<p class="eyebrow">Appears in</p><ul>${selected.records.map(record => `<li><a href="${record.type === 'Experience' ? `workex/experience-${record.id}.html` : `projects/project-${record.id}.html`}">${record.title}</a></li>`).join('')}</ul>`;
   };
   const clear = () => { node.classed('is-dimmed', false); link.classed('is-active is-dimmed', false); title.textContent = 'Select a node'; description.textContent = 'Hover or focus a node to see where it appears in the portfolio.'; meta.innerHTML = ''; related.innerHTML = ''; };
   node.on('mouseenter focus', (_, d) => show(d)).on('mouseleave', clear).on('click keydown', (event, d) => { if (event.type === 'click' || event.key === 'Enter' || event.key === ' ') { event.preventDefault(); show(d); node.filter(item => item.id === d.id).node().focus(); } });

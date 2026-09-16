@@ -39,24 +39,25 @@ Anything that isn't a command goes straight to the agent.</span>`;
     // slug -> page. `open` targets; also drives tab-completion.
     const pages = {
         skills: 'skills.html',
-        polestar: 'experience-polestar.html',
-        xceedance: 'experience-xceedance.html',
-        vedvani: 'experience-vedvani.html',
-        'stock-market': 'project-stock-market.html',
-        pokerbots: 'project-pokerbots.html',
-        evacuation: 'project-evacuation.html',
-        'house-prices': 'project-house-prices.html',
-        'spaceship-titanic': 'project-spaceship-titanic.html',
-        titanic: 'project-titanic.html',
-        'cloud-kitchen': 'project-cloud-kitchen.html',
-        'image-filtering': 'project-image-filtering.html',
-        sudoku: 'project-sudoku.html',
-        'academic-outreach': 'project-academic-outreach.html',
-        'ml-pipeline': 'project-ml-pipeline.html',
-        'dunnhumby-uplift': 'project-dunnhumby-uplift.html',
-        'agentic-poc': 'project-agentic-poc.html',
-        dhruvgpt: 'project-dhruvgpt.html'
+        polestar: 'workex/experience-polestar.html',
+        xceedance: 'workex/experience-xceedance.html',
+        vedvani: 'workex/experience-vedvani.html',
+        'stock-market': 'projects/project-stock-market.html',
+        pokerbots: 'projects/project-pokerbots.html',
+        evacuation: 'projects/project-evacuation.html',
+        'house-prices': 'projects/project-house-prices.html',
+        'spaceship-titanic': 'projects/project-spaceship-titanic.html',
+        titanic: 'projects/project-titanic.html',
+        'cloud-kitchen': 'projects/project-cloud-kitchen.html',
+        'image-filtering': 'projects/project-image-filtering.html',
+        sudoku: 'projects/project-sudoku.html',
+        'academic-outreach': 'projects/project-academic-outreach.html',
+        'ml-pipeline': 'projects/project-ml-pipeline.html',
+        'dunnhumby-uplift': 'projects/project-dunnhumby-uplift.html',
+        'agentic-poc': 'projects/project-agentic-poc.html',
+        dhruvgpt: 'projects/project-dhruvgpt.html'
     };
+    const pageRoot = /\/(?:workex|projects)\//.test(window.location.pathname) ? '../' : '';
 
     const commands = {
         help, '?': help,
@@ -297,7 +298,7 @@ Speech Recognition, Quantitative Finance`,
             const target = cmd.slice(4).trim();
             if (pages[target]) {
                 print(`Opening <span class="accent">${pages[target]}</span>…`, 'output-box');
-                setTimeout(() => { window.location.href = pages[target]; }, 400);
+                setTimeout(() => { window.location.href = `${pageRoot}${pages[target]}`; }, 400);
             } else {
                 print((target ? `open: ${target}: no such page\n\n` : '') +
                     `Available pages:\n  ${Object.keys(pages).join('\n  ')}`, 'output-box');

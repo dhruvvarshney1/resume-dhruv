@@ -16,9 +16,9 @@ window.portfolioDetails = {
   'dunnhumby-uplift': ['Project','Forecasting / Databricks','Dunnhumby Uplift & Sales Forecasting','Independent project','Retail demand forecasting across product-week features, intermittent demand modeling, hierarchical approaches, and distributed inference.','Python · CatBoost · PyMC · PySpark · Databricks · MLflow','Produced reusable models, MLflow runs, feature-importance tables, and predictions.'],
   'agentic-poc': ['Project','Agentic systems / inventory','Agentic Inventory-Replenishment POC','Independent project','A supplier-aware replenishment prototype combining demand sizing, eligibility checks, and minimum-order-quantity gating.','Python · LLM workflows · Inventory analytics','Created a constraint-aware, reviewable inventory recommendation flow.'],
   dhruvgpt: ['Project','AI assistant','DhruvGPT','Independent project','A focused personal AI assistant exploration covering prompt behavior, useful interaction boundaries, and a compact interface concept.','Python · LLM APIs · Prompt engineering','Built a small exploration of personal AI product design.'],
-  hnsw: ['Project','C++ systems / vector search','LiteHNSW','Independent systems project','A cache-conscious, in-memory approximate nearest-neighbor engine built from scratch with a C++20 HNSW index and native Python bindings.','C++20 · SIMD · HNSW · pybind11 · NumPy · CMake','Reached 97.1% recall@10 with sub-millisecond queries and 37–39% lower graph overhead at low dimensions.'],
-  'fanout-plugin': ['Project','Distributed AI / MCP','Fan-Out MCP','Independent project','An asynchronous multi-agent delegation runtime that dispatches independent tasks across local and hosted LLM providers while returning distilled, bounded results.','Python · asyncio · MCP · OpenTelemetry · Ollama · NVIDIA NIM','Combines bounded concurrency, cost controls, retries, audit logs, and context-aware result modes.'],
-  'market-regime': ['Project','Quantitative ML / risk systems','Adaptive Market Regime','Independent research project','A leakage-safe market regime engine using causal HSMM filtering to blend systematic strategy sleeves for Indian equities.','Python · HSMM · pandas · DuckDB · FastAPI · Streamlit','Walk-forward results reached 0.268 net Sharpe with a 12.09% maximum drawdown, net of costs.']
+  hnsw: ['Project','C++ systems / vector search','LiteHNSW','Independent systems project','A cache-conscious, in-memory approximate nearest-neighbor engine built from scratch with a C++20 HNSW index and native Python bindings.','C++20 · HNSW · ANN · SIMD · AVX2/FMA · AVX-512 · pybind11 · NumPy · CMake · concurrency','Reached 97.1% recall@10 with sub-millisecond queries and 37–39% lower graph overhead at low dimensions.'],
+  'fanout-plugin': ['Project','Distributed AI / MCP','Fan-Out MCP','Independent project','An asynchronous multi-agent delegation runtime that dispatches independent tasks across local and hosted LLM providers while returning distilled, bounded results.','Python · asyncio · MCP · FastMCP · OpenTelemetry · Ollama · LM Studio · NVIDIA NIM · OpenRouter · retries · cost controls','Combines bounded concurrency, provider routing, cost controls, retries, audit logs, and context-aware result modes.'],
+  'market-regime': ['Project','Quantitative ML / risk systems','Adaptive Market Regime','Independent research project','A leakage-safe market regime engine using causal HSMM filtering to blend systematic strategy sleeves for Indian equities.','Python · HSMM · causal filtering · walk-forward validation · pandas · DuckDB · FastAPI · Streamlit · portfolio allocation · risk management','Walk-forward results reached 0.268 net Sharpe with a 12.09% maximum drawdown, net of costs.']
 };
 
 window.detailSections = {
@@ -68,6 +68,12 @@ window.detailSections = {
 const data = window.portfolioDetails;
 const item = data[document.body.dataset.detail];
 if (item) {
+  const isNestedPage = /\/(?:workex|projects)\//.test(window.location.pathname);
+  const homePath = isNestedPage ? '../index.html' : 'index.html';
+  const navLogo = document.querySelector('.nav-logo');
+  if (navLogo) {
+    navLogo.href = homePath;
+  }
   document.title = `${item[2]} — Dhruv Varshney`;
   const detailMedia = {
     'stock-market': ['images/stock-price-prediction.png', 'Stock market prediction visualization', 'Stock market simulation and prediction visual.'],
@@ -114,7 +120,7 @@ if (item) {
   const sectionMarkup = sections.map(([eyebrow, heading, html, wide]) =>
     `<section${wide ? ' class="detail-wide"' : ''}><p class="eyebrow">${eyebrow}</p>${heading ? `<h2>${heading}</h2>` : ''}${html}</section>`
   ).join('');
-  document.querySelector('#detail').innerHTML = `<a class="back-link" href="index.html">← Back to portfolio</a><header class="detail-hero reveal is-visible"><p class="eyebrow">${item[0]} · ${item[1]}</p><h1>${item[2]}</h1><p class="detail-org">${item[3]}</p><p class="detail-overview">${item[4]}</p>${repoMarkup}</header>${figureMarkup}<div class="detail-grid">${sectionMarkup}</div>`;
+  document.querySelector('#detail').innerHTML = `<a class="back-link" href="${homePath}">← Back to portfolio</a><header class="detail-hero reveal is-visible"><p class="eyebrow">${item[0]} · ${item[1]}</p><h1>${item[2]}</h1><p class="detail-org">${item[3]}</p><p class="detail-overview">${item[4]}</p>${repoMarkup}</header>${figureMarkup}<div class="detail-grid">${sectionMarkup}</div>`;
 }
 
 (() => {
