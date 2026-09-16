@@ -2,6 +2,10 @@
 // (grounded in resume.json) plus anything else, via NVIDIA NIM API.
 // Exposes window.TerminalAgent.ask(question) -> Promise<string> (plain text).
 //
+// PROXY SETUP:
+// In production, set PROXY_ENDPOINT to your Cloudflare Worker URL or '/api/chat'.
+// The proxy securely injects your NVIDIA_API_KEY server-side so it is never exposed in the browser.
+// For local direct testing, you can alternatively set NVIDIA_API_KEY below.
 // VERCEL PROXY SETUP:
 // In production on Vercel, requests are sent to '/api/chat' which securely injects
 // NVIDIA_API_KEY from Vercel's environment variables (never exposed to visitors).
@@ -10,6 +14,8 @@
     const NVIDIA_API_KEY = ''; // Optional: only used if calling NVIDIA directly without a proxy
     const MODEL = 'openai/gpt-oss-20b';
     const DIRECT_ENDPOINT = 'https://integrate.api.nvidia.com/v1/chat/completions';
+    const ASSET_BASE = new URL('./', document.currentScript?.src || location.href);
+
 
     const PERSONA = `You are the built-in terminal agent on Dhruv Varshney's portfolio site (dhruvvarshney1.github.io/resume).
 Guests type questions at a bash-style prompt; you are the thing that answers.
@@ -30,7 +36,7 @@ RESUME DATA (JSON):
 
     function loadResume() {
         if (!resumePromise) {
-            resumePromise = fetch('resume.json')
+            resumePromise = fetch(new URL('resume.json', ASSET_BASE))
                 .then(r => (r.ok ? r.json() : Promise.reject(new Error('resume.json: HTTP ' + r.status))))
                 .then(data => JSON.stringify(data));
         }
@@ -42,6 +48,7 @@ RESUME DATA (JSON):
         const endpoint = useProxy ? PROXY_ENDPOINT : DIRECT_ENDPOINT;
 
         if (!useProxy && (!NVIDIA_API_KEY || NVIDIA_API_KEY === 'nvapi-REPLACE_ME')) {
+            return 'agent: no proxy or API key configured yet.\nSet your Cloudflare Worker URL in agent.js (PROXY_ENDPOINT) or add a local test key.\nSee proxy/README.md for setup instructions.';
             return 'agent: no API key or proxy configured yet.\nSet NVIDIA_API_KEY in your Vercel Environment Variables or local .env file.';
         }
 
@@ -88,11 +95,13 @@ RESUME DATA (JSON):
             } catch (_) {}
 
             if (res.status === 401 || res.status === 403) {
+                return 'agent: API key rejected (' + res.status + '). Check the key in your proxy or agent.js.';
                 return 'agent: API key rejected (' + res.status + ')' + serverErrMsg + '. Check NVIDIA_API_KEY in Vercel settings.';
             }
             if (res.status === 429) {
                 return 'agent: rate limited (429). Give it a few seconds and ask again.';
             }
+            return 'agent: API error ' + (res.status || 'unknown') + '. Try again shortly.';
             return 'agent: API error ' + (res.status || 'unknown') + serverErrMsg + '. Try again shortly.';
         }
 

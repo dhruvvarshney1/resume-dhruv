@@ -14,7 +14,7 @@
   };
   document.querySelectorAll('.project-item').forEach(card => {
     const href = card.getAttribute('href') || '';
-    const key = href.replace(/^project-/, '').replace(/\.html$/, '');
+    const key = href.split('/').pop().replace(/^project-/, '').replace(/\.html$/, '');
     const record = details[key];
     const title = card.querySelector('h3')?.textContent.trim() || record?.[2] || 'Project';
     const type = card.querySelector('.project-type')?.textContent.trim() || record?.[1] || 'Project';

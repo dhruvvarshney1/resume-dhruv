@@ -5,8 +5,9 @@
     "email": "dhruvvarshney2906@gmail.com",
     "phone": "+91 85979 86847",
     "location": "Kharagpur, India",
-    "linkedin": null,
-    "github": null
+    "linkedin": "https://www.linkedin.com/in/dhruv-varshney-013672293/",
+    "github": "https://github.com/dhruvvarshney1",
+    "instagram": "https://www.instagram.com/dhruvvarshney_1/"
   },
   "summary": "I am a student researcher and builder at IIT Kharagpur working at the intersection of geophysics, machine learning, and applied AI. My background in exploration geophysics has trained me to think carefully about noisy signals, real-world constraints, and measurable outcomes, while my technical work has focused on building reliable systems for forecasting, automation, and intelligent decision support. Over the past few years, I have worked on production-style machine learning pipelines, language-model and agentic systems, computer vision applications, and full-stack web tools. I am motivated by problems that require both rigorous engineering and thoughtful modeling.",
   "education": [
@@ -327,6 +328,39 @@
         "Recursion",
         "Backtracking"
       ]
+    },
+    {
+      "title": "LiteHNSW",
+      "role": "C++ Systems / Performance Engineer",
+      "highlights": [
+        "Built a cache-conscious in-memory approximate nearest-neighbor engine from scratch in C++20 using a flat vector store and offset-addressed HNSW graph arena.",
+        "Implemented runtime-dispatched AVX2/FMA and AVX-512 distance kernels with a portable fallback, plus caller-owned query scratch buffers with generation-counter reset.",
+        "Added thread-safe concurrent reads, exact brute-force oracle checks, and native pybind11/NumPy bindings with GIL release for batch queries.",
+        "Reached 97.1% recall@10 at efSearch 200, sub-millisecond p50 queries, and 37–39% lower graph overhead at low dimensions."
+      ],
+      "tech": ["C++20", "HNSW", "SIMD", "pybind11", "NumPy", "CMake"]
+    },
+    {
+      "title": "Fan-Out MCP",
+      "role": "Distributed AI Systems Engineer",
+      "highlights": [
+        "Designed an asynchronous multi-agent delegation runtime and MCP server for dispatching independent subtasks across local and hosted LLM providers.",
+        "Implemented bounded concurrency, per-provider routing, retries with jitter, predictive cost controls, payload limits, and truncated, referenced, or full return modes.",
+        "Added passthrough, concatenation, majority voting, LLM-as-judge ranking, and recursive map-reduce distillation strategies to reduce supervisor context load.",
+        "Built OpenTelemetry traces, JSONL audit logs, MCP resources, and a cost analytics CLI for run-level and task-level observability."
+      ],
+      "tech": ["Python", "asyncio", "MCP", "OpenTelemetry", "Ollama", "NVIDIA NIM"]
+    },
+    {
+      "title": "Adaptive Market Regime",
+      "role": "Quantitative ML / Risk Systems Engineer",
+      "highlights": [
+        "Built a leakage-safe market regime engine for Indian equities using a multivariate Hidden Semi-Markov Model and causal forward filtering.",
+        "Implemented point-in-time macro joins, train-only walk-forward fitting, next-bar execution, explicit statutory costs, and a single allocator shared by backtests and FastAPI inference.",
+        "Blended trend, momentum, defensive, mean-reversion, and equal-weight sleeves through guarded probabilistic regime allocation.",
+        "Across seven out-of-sample folds, achieved 0.268 net Sharpe with a 12.09% maximum drawdown in the reported net-of-costs evaluation."
+      ],
+      "tech": ["Python", "HSMM", "pandas", "DuckDB", "FastAPI", "Streamlit"]
     }
   ],
   "skills": {
